@@ -1,0 +1,109 @@
+/* 
+.input {
+  @apply  w-80   px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500;
+}
+
+.input--small {
+  @apply text-sm px-2 py-1;
+}
+.input--medium {
+  @apply text-base px-3 py-2;
+}
+.input--large {
+  @apply text-lg px-4 py-3;
+}
+
+
+.input--primary {
+  @apply bg-blue-100 border-blue-500;
+}
+.input--secondary {
+  @apply bg-gray-100 border-red-500;
+}
+
+.input--default {
+  @apply border-gray-300;
+}
+.input--error {
+  @apply border-red-500;
+}
+.input--success {
+  @apply border-green-500;
+}
+
+
+.input--outline {
+  @apply border-2 border-gray-500;
+}
+
+
+.input--full {
+  @apply w-full;
+}
+
+
+.aaaa--error {
+  @apply text-red-600;
+}
+.aaaa--success {
+  @apply text-green-600;
+} */
+.input { 
+  @apply w-80 px-3 py-2 border rounded-md focus:outline-none focus:ring-2; 
+}
+
+/* سایزها */
+.input--sm { @apply text-sm px-2 py-1; }
+.input--md { @apply text-base px-3 py-2; }
+.input--lg { @apply text-lg px-4 py-3; }
+
+/* نوع / واریانت */
+.input--filled { @apply bg-gray-100 border-none; }
+.input--primary { @apply bg-blue-100 border-blue-500; }
+.input--secondary { @apply bg-gray-100 border-gray-400; }
+
+/* وضعیت‌ها */
+.input--default { @apply border-gray-300; }
+.input--error { @apply border-red-500; }
+.input--success { @apply border-green-500; }
+.input--warning { @apply border-yellow-500; }  /* اضافه شد برای color="warning" */
+
+/* outline و full */
+.input--outline { @apply border-2 border-gray-500; }
+.input--full { @apply w-full; }
+.aaaa--error { @apply text-red-600; }
+.aaaa--success { @apply text-green-600; }
+.aaaa--warning { @apply text-yellow-600; } /* اضافه شد */
+
+
+.input--primary:hover {
+  @apply bg-blue-200 border-blue-600;
+}
+
+.input--secondary:hover {
+  @apply bg-gray-200 border-gray-500;
+}
+
+.input--warning:hover {
+  @apply bg-yellow-100 border-yellow-600;
+}
+
+.input--error:hover {
+  @apply bg-red-100 border-red-600;
+}
+
+.input--success:hover {
+  @apply bg-green-100 border-green-600;
+}
+
+/* hover ترکیبی برای variant=filled + color=warning */
+.input--filled.input--warning:hover {
+  @apply bg-yellow-200 border-yellow-600;
+}
+
+/* hover ترکیبی برای outline + warning */
+.input--outline.input--warning:hover {
+  @apply border-yellow-700;
+}
+
+
