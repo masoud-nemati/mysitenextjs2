@@ -1,60 +1,11 @@
-/* 
-.input {
-  @apply  w-80   px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500;
-}
 
-.input--small {
-  @apply text-sm px-2 py-1;
-}
-.input--medium {
-  @apply text-base px-3 py-2;
-}
-.input--large {
-  @apply text-lg px-4 py-3;
-}
-
-
-.input--primary {
-  @apply bg-blue-100 border-blue-500;
-}
-.input--secondary {
-  @apply bg-gray-100 border-red-500;
-}
-
-.input--default {
-  @apply border-gray-300;
-}
-.input--error {
-  @apply border-red-500;
-}
-.input--success {
-  @apply border-green-500;
-}
-
-
-.input--outline {
-  @apply border-2 border-gray-500;
-}
-
-
-.input--full {
-  @apply w-full;
-}
-
-
-.aaaa--error {
-  @apply text-red-600;
-}
-.aaaa--success {
-  @apply text-green-600;
-} */
 .input { 
-  @apply w-80 px-3 py-2 border rounded-md focus:outline-none focus:ring-2; 
+  @apply    w-80 px-3 py-2 border rounded-md focus:outline-none focus:ring-2; 
 }
 
 /* سایزها */
-.input--sm { @apply text-sm px-2 py-1; }
-.input--md { @apply text-base px-3 py-2; }
+.input--sm { @apply  bg-amber-700  text-sm px-2 py-1; }
+.input--md { @apply   bg-amber-300  text-base px-3 py-2; }
 .input--lg { @apply text-lg px-4 py-3; }
 
 /* نوع / واریانت */
@@ -73,7 +24,7 @@
 .input--full { @apply w-full; }
 .aaaa--error { @apply text-red-600; }
 .aaaa--success { @apply text-green-600; }
-.aaaa--warning { @apply text-yellow-600; } /* اضافه شد */
+.aaaa--warning { @apply   bg-blue-700 w-120 h-12 text-black; } /* اضافه شد */
 
 
 .input--primary:hover {
@@ -97,8 +48,8 @@
 }
 
 /* hover ترکیبی برای variant=filled + color=warning */
-.input--filled.input--warning:hover {
-  @apply bg-yellow-200 border-yellow-600;
+.input--filled.aaaa--warning:hover {
+  @apply bg-red-500 border-yellow-600;
 }
 
 /* hover ترکیبی برای outline + warning */

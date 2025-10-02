@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "../app/_components/input/input.css";
+@import "../tailwind/component/input.css";
 
 
 
