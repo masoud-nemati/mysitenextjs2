@@ -1,1 +1,0 @@
-export type color = "default"  |"info"  |"success"  |"warning"  |"error" |"lg" ;

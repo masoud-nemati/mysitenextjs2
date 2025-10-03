@@ -1,1 +1,1 @@
-export type size = "small" | "medium" |  "large" | "extera-large" | "sm" | "lg"  ;
+export type Size="xs" | "sm" | "md" | "lg" | "xl";

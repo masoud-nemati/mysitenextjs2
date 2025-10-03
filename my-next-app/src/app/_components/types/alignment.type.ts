@@ -1,1 +1,1 @@
-export type Alignment = "left" | "right" | "center"  | "justify" | "";
+export type Alignment= "left" | "right" | "center" | "justify" ;

@@ -1,50 +1,96 @@
+"use client";
+import React, { forwardRef, useState } from "react";
 import { InputProps } from "./input.type";
-import classnames from "classnames";
+import classNames from "classnames";
+
+export const Input: React.FC<InputProps> = forwardRef<
+  HTMLInputElement,
+  InputProps
+>(
+  (
+    {
+      compSize,
+      color,
+      variant,
+      shape,
+      isDisabled = false,
+      type = "text",
+      label = "",
+      helperText = "",
+      byIcon = false,
+      icon,
+      id,
+      className,
+      ...res
+    },
+    ref
+  ) => {
+    const labelClasses = classNames({ "input--label": label });
+    const inputClasses = classNames(
+      "input",
+      className,
+      { [`input--${variant}`]: variant },
+      { [`input--${color}`]: color },
+      { [`input--${compSize}`]: compSize },
+      { [`input--${shape}`]: shape },
+      { "input--icon": byIcon }
+    );
+    const iconhelperTextClassees = classNames({ "input--iconhelpertext": helperText });
+    const helperTextClassees = classNames({ "input--helpertext": helperText });
+    return (
+      <>
+        <div className="flex items-center">
+        
+        
+          {label && (
+            <label htmlFor={id} className={labelClasses}>
+              {label}
+            </label>
+          )}
 
 
-export const Input: React.FC<InputProps> = (props) => {
-  const {
-    compsize,
-    color,
-    variant,
-    isdisabled = false,
-    type = "text",
-    state = "default",
-    label = "",
-    helpertext = "",
-    isoutline = false,
-    isfullwidth = false,
-    id,
-    className,
-    ...rest
-  } = props;
 
-  const inputclasses=classnames(
-       "input",
-    className,
-    {[ `aaaa--${color}`]:color },
-    {[ `input--${compsize}`]:compsize},
-    {[ `input--${variant}`]:variant},
-    {[ `input--${state}`]:state},
-    {"input--outline":isoutline},
-    {"inout--full":isfullwidth,}
-  )
+          {byIcon ? (
+            <div className="relative">
+              <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                {icon}
+              </div>
+              <input
+                ref={ref}
+                id={id}
+                type={type}
+                disabled={isDisabled}
+                className={inputClasses}
+                {...res}
+              />
+            </div>
+          ) : (
+            <input
+              ref={ref}
+              id={id}
+              type={type}
+              disabled={isDisabled}
+              className={inputClasses}
+              {...res}
+            />
+          )}
 
-  return (
-    <div className="flex flex-col gap-1">
-      {label && (
-        <label className="text-sm font-medium" htmlFor={id}>
-          {label}
-        </label>
-      )}
-    <input
-  id={id}
-  type={type}
-  disabled={isdisabled}
-  className={inputclasses}
-  {...rest}
-/>
-      {helpertext && <p className="text-xs text-gray-500">{helpertext}</p>}
-    </div>
-  );
-};
+
+
+          {helperText && (
+            <div className="group">
+              <span className={iconhelperTextClassees}>!</span>
+              <span className={helperTextClassees}>
+                {helperText}
+              </span>
+            </div>
+          )}
+
+          
+        </div>
+      </>
+    );
+  }
+);
+
+Input.displayName = "Input";
