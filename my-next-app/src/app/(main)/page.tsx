@@ -4,8 +4,8 @@ import { Input } from "../_components/input";
 
 export default function Home() {
   return (
-      <div className="p-8 space-y-6 bg-gray-100 min-h-screen">
-      
+    <div className="p-8 space-y-6 bg-gray-100 min-h-screen">
+
       {/* ساده */}
       <Input
         id="simple"
@@ -22,9 +22,8 @@ export default function Home() {
         label="Input with Icon"
         placeholder="Search..."
         byIcon={true}
-     
         variant="secondary"
-        color="secondary"
+        color="yellow"
         compsize="xl"
       />
 
@@ -34,8 +33,8 @@ export default function Home() {
         label="Input with Helper"
         placeholder="Enter email..."
         helperText="Email is required"
-        variant="success"
-        color="danger"
+        variant="info"
+        color="other"
         compsize="xs"
       />
 
@@ -59,6 +58,22 @@ export default function Home() {
         color="warning"
         compsize="lg"
       />
+      <Input 
+      id="test"
+      label="test input"
+      placeholder="تست میکنم"
+      variant="danger"
+      color="green"
+      compsize="md"
+      helperText="دارم تست میکنم"
+      
+      />
+
+
+
+
+
+
     </div>
   );
 }

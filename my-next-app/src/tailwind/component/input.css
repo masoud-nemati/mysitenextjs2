@@ -27,6 +27,10 @@
 .aaaa--warning { @apply   bg-blue-700 w-120 h-12 text-black; } /* اضافه شد */
 
 
+.input--danger{
+  @apply bg-amber-300 border-b-orange-700;
+}
+
 .input--primary:hover {
   @apply bg-blue-200 border-blue-600;
 }
@@ -57,4 +61,7 @@
   @apply border-yellow-700;
 }
 
+.input--danger.input--green:hover{
 
+  @apply bg-amber-50 border-b-blue-700
+}
