@@ -1,10 +1,13 @@
+
+
 import { Input } from "../_components/input";
-
-
+import {IconEmail} from "../_components/icons/icons"
 
 export default function Home() {
   return (
     <div className="p-8 space-y-6 bg-gray-100 min-h-screen">
+   <IconEmail></IconEmail>
+
 
       {/* ساده */}
       <Input
@@ -58,15 +61,15 @@ export default function Home() {
         color="warning"
         compsize="lg"
       />
-      <Input 
-      id="test"
-      label="test input"
-      placeholder="تست میکنم"
-      variant="danger"
-      color="green"
-      compsize="md"
-      helperText="دارم تست میکنم"
-      
+      <Input
+        id="test"
+        label="test input"
+        placeholder="تست میکنم"
+        variant="danger"
+        color="green"
+        compsize="md"
+        helperText="دارم تست میکنم"
+
       />
 
 

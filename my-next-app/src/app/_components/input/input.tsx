@@ -9,11 +9,11 @@ export const Input: React.FC<InputProps> = forwardRef<
 >(
   (
     {
-      compSize,
+      compsize,
       color,
       variant,
       shape,
-      isDisabled = false,
+      isdisabled = false,
       type = "text",
       label = "",
       helperText = "",
@@ -24,14 +24,14 @@ export const Input: React.FC<InputProps> = forwardRef<
       ...res
     },
     ref
-  ) => {
+  ): React.JSX.Element => {
     const labelClasses = classNames({ "input--label": label });
     const inputClasses = classNames(
       "input",
       className,
       { [`input--${variant}`]: variant },
       { [`input--${color}`]: color },
-      { [`input--${compSize}`]: compSize },
+      { [`input--${compsize}`]: compsize},
       { [`input--${shape}`]: shape },
       { "input--icon": byIcon }
     );
@@ -59,7 +59,7 @@ export const Input: React.FC<InputProps> = forwardRef<
                 ref={ref}
                 id={id}
                 type={type}
-                disabled={isDisabled}
+                disabled={isdisabled}
                 className={inputClasses}
                 {...res}
               />
@@ -69,7 +69,7 @@ export const Input: React.FC<InputProps> = forwardRef<
               ref={ref}
               id={id}
               type={type}
-              disabled={isDisabled}
+              disabled={isdisabled}
               className={inputClasses}
               {...res}
             />
