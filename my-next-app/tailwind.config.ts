@@ -10,6 +10,7 @@ module.exports = {
       // 🎨 رنگ‌ها
       colors: {
         primary: {
+        
           DEFAULT: '#1aaeed',
           disabled: '#bbe7fc',
           light: '#7fd3fa',
@@ -171,3 +172,10 @@ module.exports = {
     }
   ],
 };
+
+
+
+
+
+
+

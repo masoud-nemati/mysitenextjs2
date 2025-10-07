@@ -1,12 +1,19 @@
 
+import { Button } from "../_components/button"
 
 import { Input } from "../_components/input";
-import {IconEmail} from "../_components/icons/icons"
+import { IconAccount, IconCart, IconEmail } from "../_components/icons/icons"
 
 export default function Home() {
   return (
     <div className="p-8 space-y-6 bg-gray-100 min-h-screen">
-   <IconEmail></IconEmail>
+
+      <Button variant="primary">primary</Button>
+      <Button variant="secondary">secondary</Button>
+      <Button variant="success">success</Button>
+      <Button variant="danger">danger</Button>
+      <Button variant="warning">warning</Button>
+      <Button variant="info">info</Button>
 
 
       {/* ساده */}
@@ -17,6 +24,8 @@ export default function Home() {
         variant="info"
         color="primary"
         compsize="xm"
+        byIcon={true}
+        icon={<IconEmail width={18} height={18} color="black" />}
       />
 
       {/* با آیکون */}
@@ -28,6 +37,8 @@ export default function Home() {
         variant="secondary"
         color="yellow"
         compsize="xl"
+
+        icon={<IconAccount width={18} height={18} color="red" />}
       />
 
       {/* با helper text */}
@@ -39,6 +50,8 @@ export default function Home() {
         variant="info"
         color="other"
         compsize="xs"
+        byIcon={true}
+        icon={<IconCart width={18} height={18} />}
       />
 
       {/* غیر فعال */}

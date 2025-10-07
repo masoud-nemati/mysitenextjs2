@@ -1,0 +1,13 @@
+.btn{
+  @apply  bg-blue-800 text-cyan-50 w-24 h-8 px-4 py-2 m-1 rounded inline-flex justify-center items-center font-medium cursor-pointer;
+
+}  
+.btn:hover{
+    @apply bg-blue-300 
+}
+.btn--secondary {
+  @apply bg-gray-500 text-white;
+}
+.btn--secondary:hover:hover {
+  @apply bg-gray-300;
+}
