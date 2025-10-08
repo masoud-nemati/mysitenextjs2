@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       // 🎨 رنگ‌ها
       colors: {
+           'shop-gray-border': '#E5E7EB', // رنگ دلخواه برای border
         primary: {
         
           DEFAULT: '#1aaeed',

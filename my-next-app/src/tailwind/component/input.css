@@ -1,81 +1,79 @@
-
-.input { 
-  @apply    w-80 px-3 py-2 border rounded-md focus:outline-none focus:ring-2; 
+/* پایه‌ی input */
+.input {
+  @apply w-80 h-11 px-3 py-2 m-1 border rounded-md leading-6 text-base placeholder:text-sm transition-all duration-200 ease-in-out;
 }
 
-/* سایزها */
-.input--sm { @apply  bg-amber-700  text-sm px-2 py-1; }
-.input--md { @apply   bg-amber-300  text-base px-3 py-2; }
-.input--lg { @apply text-lg px-4 py-3; }
+/* اندازه‌ها */
+.input--xs { @apply w-40 h-7 text-sm; }
+.input--sm { @apply w-60 h-9 text-sm; }
+.input--md { @apply w-80 h-11 text-base; }
+.input--lg { @apply w-96 h-14 text-lg; }
+.input--xl { @apply w-[500px] h-16 text-xl; }
 
+/* حالت‌های variant */
+.input--primary {
+  @apply border-blue-600 bg-blue-50 text-blue-800 placeholder:text-blue-400;
+}
+.input--primary:focus {
+  @apply outline-none border-2 border-blue-600;
+}
 
-/* نوع / واریانت */
-.input--filled { @apply bg-gray-100 border-none; }
-.input--primary { @apply bg-blue-100 border-blue-500 ; }
-.input--secondary { @apply bg-gray-100 border-gray-400; }
+.input--secondary {
+  @apply border-gray-500 bg-gray-50 text-gray-800 placeholder:text-gray-400;
+}
+.input--secondary:focus {
+  @apply outline-none border-2 border-gray-500;
+}
 
-/* وضعیت‌ها */
-.input--default { @apply border-gray-300; }
-.input--error { @apply border-red-500; }
-.input--success { @apply border-green-500; }
-.input--warning { @apply border-yellow-500; }  /* اضافه شد برای color="warning" */
+.input--success {
+  @apply border-green-600 bg-green-50 text-green-800 placeholder:text-green-400;
+}
+.input--success:focus {
+  @apply outline-none border-2 border-green-600;
+}
 
-/* outline و full */
-.input--outline { @apply border-2 border-gray-500; }
+.input--danger {
+  @apply border-red-600 bg-red-50 text-red-800 placeholder:text-red-400;
+}
+.input--danger:focus {
+  @apply outline-none border-2 border-red-600;
+}
+
+.input--warning {
+  @apply border-yellow-600 bg-yellow-50 text-yellow-800 placeholder:text-yellow-500;
+}
+.input--warning:focus {
+  @apply outline-none border-2 border-yellow-600;
+}
+
+.input--info {
+  @apply border-cyan-600 bg-cyan-50 text-cyan-800 placeholder:text-cyan-400;
+}
+.input--info:focus {
+  @apply outline-none border-2 border-cyan-600;
+}
+
+/* شکل‌ها */
+.input--wide { @apply w-full; }
+.input--pill { @apply rounded-full; }
+.input--square { @apply rounded-none; }
 .input--full { @apply w-full; }
-.aaaa--error { @apply text-red-600; }
-.aaaa--success { @apply text-green-600; }
-.aaaa--warning { @apply   bg-blue-700 w-120 h-12 text-black; } /* اضافه شد */
 
-
-.input--danger{
-  @apply bg-amber-300 border-b-orange-700;
+/* وضعیت غیرفعال */
+.input:disabled {
+  @apply bg-gray-100 text-gray-400 border-gray-300 cursor-not-allowed;
 }
 
-.input--primary:hover {
-  @apply bg-blue-200 border-blue-600;
-}
-
-.input--secondary:hover {
-  @apply bg-gray-200 border-gray-500;
-}
-
-.input--warning:hover {
-  @apply bg-yellow-100 border-yellow-600;
-}
-
-.input--error:hover {
-  @apply bg-red-100 border-red-600;
-}
-
-.input--success:hover {
-  @apply bg-green-100 border-green-600;
-}
-
-/* hover ترکیبی برای variant=filled + color=warning */
-.input--filled.aaaa--warning:hover {
-  @apply bg-red-500 border-yellow-600;
-}
-
-/* hover ترکیبی برای outline + warning */
-.input--outline.input--warning:hover {
-  @apply border-yellow-700;
-}
-
-.input--danger.input--green:hover{
-
-  @apply bg-amber-50 border-b-blue-700
-}
-.input-wrapper {
-  @apply relative inline-block;
-}
-
-/* موقعیت آیکن داخل input */
-.input-icon {
-  @apply absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none;
-}
-
-/* وقتی input آیکن دارد، متن فاصله بگیرد */
+/* آیکن داخل input */
 .input--icon {
-  @apply ps-10; /* یا اگر Tailwind قدیمی‌تر داری، pl-10 */
+  @apply ps-10; /* فاصله از سمت چپ وقتی آیکن داری */
+}
+
+/* آیکن و متن راهنما */
+.input--iconhelpertext {
+  @apply inline-block w-5 h-5 bg-gray-400 text-white text-xs rounded-full text-center cursor-pointer;
+}
+
+.input--helpertext {
+  @apply hidden group-hover:inline-block text-xs text-gray-400 mx-1;
 }

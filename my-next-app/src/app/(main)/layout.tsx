@@ -1,3 +1,7 @@
+
+import { Header } from "../_components/header";
+
+
 export default function MainLayout({
   children,
 }: Readonly<{
@@ -5,7 +9,7 @@ export default function MainLayout({
 }>) {
   return (
     <>
-        <header className="h-24 bg-amber-100  flex justify-center items-center ">header</header>
+        <Header/>
         <main className="flex-1">{children}</main>
         <footer className="h-24 bg-amber-100  flex justify-center items-center ">footer</footer>
 

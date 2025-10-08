@@ -1,13 +1,42 @@
-.btn{
-  @apply  bg-blue-800 text-cyan-50 w-24 h-8 px-4 py-2 m-1 rounded inline-flex justify-center items-center font-medium cursor-pointer;
+/* پایه‌ی دکمه */
+.btn {
+  @apply font-medium rounded-md m-1 px-4 py-2 transition-all duration-200 ease-in-out;
+}
 
-}  
-.btn:hover{
-    @apply bg-blue-300 
+/* سایزها */
+.btn--xs { @apply text-xs px-2 py-1; }
+.btn--sm { @apply text-sm px-3 py-1.5; }
+.btn--md { @apply text-base px-4 py-2; }
+.btn--lg { @apply text-lg px-5 py-2.5; }
+.btn--xl { @apply text-xl px-6 py-3; }
+
+/* رنگ‌ها / نوع variant */
+.btn--primary { @apply bg-blue-600 text-white hover:bg-blue-700 border border-blue-600; }
+.btn--secondary { @apply bg-gray-600 text-white hover:bg-gray-700 border border-gray-600; }
+.btn--success { @apply bg-green-600 text-white hover:bg-green-700 border border-green-600; }
+.btn--danger { @apply bg-red-600 text-white hover:bg-red-700 border border-red-600; }
+.btn--warning { @apply bg-yellow-500 text-black hover:bg-yellow-600 border border-yellow-500; }
+.btn--info { @apply bg-cyan-600 text-white hover:bg-cyan-700 border border-cyan-600; }
+
+/* حالت outline */
+.btn--primary.btn--outline { @apply bg-transparent text-blue-600 border-2 border-blue-600 hover:bg-blue-600 hover:text-white; }
+.btn--secondary.btn--outline { @apply bg-transparent text-gray-600 border-2 border-gray-600 hover:bg-gray-600 hover:text-white; }
+.btn--success.btn--outline { @apply bg-transparent text-green-600 border-2 border-green-600 hover:bg-green-600 hover:text-white; }
+.btn--danger.btn--outline { @apply bg-transparent text-red-600 border-2 border-red-600 hover:bg-red-600 hover:text-white; }
+.btn--warning.btn--outline { @apply bg-transparent text-yellow-600 border-2 border-yellow-600 hover:bg-yellow-600 hover:text-black; }
+.btn--info.btn--outline { @apply bg-transparent text-cyan-600 border-2 border-cyan-600 hover:bg-cyan-600 hover:text-white; }
+
+/* دکمه غیرفعال */
+.btn:disabled {
+  @apply bg-gray-200 text-gray-400 border-gray-300 cursor-not-allowed;
 }
-.btn--secondary {
-  @apply bg-gray-500 text-white;
-}
-.btn--secondary:hover:hover {
-  @apply bg-gray-300;
+
+/* شکل‌های خاص */
+.btn--pill { @apply rounded-full; }
+.btn--square { @apply rounded-none; }
+.btn--full { @apply w-full; }
+
+/* حالت focus */
+.btn:focus {
+  @apply outline-none ring-2 ring-offset-2 ring-gray-300;
 }

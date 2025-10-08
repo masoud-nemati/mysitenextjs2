@@ -1,0 +1,8 @@
+.header-wrapper {
+     @apply top-0 z-[1000] overflow-hidden  bg-white xl:sticky dark:bg-gray-400;
+}
+
+.header-wrapper__header{
+
+ 
+}
