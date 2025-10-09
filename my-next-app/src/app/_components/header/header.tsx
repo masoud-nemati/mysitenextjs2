@@ -35,7 +35,7 @@ export const Header: React.FC = () => {
                                 className="hidden w-32 md:inline-block lg:w-40"
                             >
                                 <Image
-                                    src="/images/logo/logo.svg"
+                                    src="logo/logo.svg"
                                     alt="logo"
                                     width={111}
                                     height={37}

@@ -1,8 +1,75 @@
 .header-wrapper {
-     @apply top-0 z-[1000] overflow-hidden  bg-white xl:sticky dark:bg-gray-400;
+  @apply sticky top-0 z-[1000] bg-white shadow-md dark:bg-gray-200 transition-all duration-300 pr-10;
+
+  &__header {
+    @apply container mx-auto flex items-center justify-between px-4 py-3 lg:px-8;
+  }
+
+  /* بخش اصلی هدر شامل لوگو و جستجو */
+  .header__nav {
+    @apply flex w-full items-center justify-between gap-4;
+  }
+
+  /* لوگو */
+  .header-logo {
+    @apply flex items-center gap-3  pl-5;
+  }
+
+  /* باکس جستجو */
+  .header__search-box {
+  @apply hidden md:flex flex-1 justify-center;
+
+  input {
+    @apply w-full max-w-md px-4 py-2 border border-gray-300 rounded-md transition duration-300 
+    focus:outline-none focus:ring-2 focus:ring-blue-500 hover:ring-2 hover:ring-blue-300 hover:bg-amber-50;
+  }
 }
 
-.header-wrapper__header{
+  /* دکمه منوی موبایل */
+  .toggle-btn {
+    @apply p-2 text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white transition;
+  }
 
- 
+  /* منوی اصلی */
+  .header-menu-wrapper {
+  @apply hidden lg:flex items-center justify-between gap-6 pr-8; /* pr-28 خیلی زیاد بود */
+}
+
+.header_menu {
+  @apply flex gap-2 text-gray-700 dark:text-gray-200 mr-70; /* ml-8 برای کمی فاصله به سمت راست */
+}
+
+  .header_menu a {
+    @apply relative text-base font-medium transition hover:text-blue-600 dark:hover:text-blue-400;
+    
+  }
+
+  .header_menu a::after {
+    content: "";
+    @apply absolute left-0 bottom-0 h-[2px] w-0 bg-blue-600 transition-all duration-300;
+  }
+
+  .header_menu a:hover::after {
+    @apply w-full;
+  }
+
+  /* آیکون‌ها */
+  .header-icons {
+    @apply flex items-center gap-3;
+  }
+
+  /* حالت موبایل */
+  @media (max-width: 1024px) {
+    .header-menu-wrapper {
+      @apply hidden;
+    }
+
+    .header__search-box {
+      @apply hidden;
+    }
+
+    .toggle-btn {
+      @apply block;
+    }
+  }
 }

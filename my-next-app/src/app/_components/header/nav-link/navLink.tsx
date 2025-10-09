@@ -7,7 +7,19 @@ export const NavLink = ({
     href: string
     children: React.ReactNode
 }) => (
-    <Link href={href} className="mt-2 w-[80px] transform rounded-md text-start text-md text-shop-gray-900 transition-colors duration-300 hover:text-warning-400 lg:mt-0 lg:text-center dark:text-gray-200 dark:hover:bg-gray-700">
-        {children}
-    </Link>
+<Link
+  href={href}
+  className="
+    mt-2  text-md font-medium text-blue-900
+    text-center
+    rounded-lg
+    px-3 py-2
+    transition-all duration-300
+     hover:text-white hover:shadow-md
+    focus:outline-none focus:ring-2 focus:ring-blue-300
+  "
+>
+  {children}
+</Link>
+
 )
