@@ -12,7 +12,8 @@ import HeaderFooter from './header-footer/header-footer'
 export const HeaderMobile: React.FC = () => {
     return (
         <>
-            <div className="absolute right-0 top-0 z-[999] w-[360px] bg-neutral-50 p-8">
+           <div className="absolute right-0 top-0 z-[999] w-[360px] bg-neutral-500 p-8 md:hidden">
+
                 {/* logo && close btn */}
                 <div className="flex justify-between border-b border-shop-gray-border pb-4">
                     {/* Logo */}
@@ -21,7 +22,7 @@ export const HeaderMobile: React.FC = () => {
                         className="relative inline-block w-32 md:w-40"
                     >
                         <Image
-                            src="/images/logo/logo.svg"
+                            src="logo/logo.svg"
                             alt="logo"
                             width={111}
                             height={37}

@@ -44,14 +44,11 @@ export const Header: React.FC = () => {
                             </Link>
                             {/*search input */}
                             <div className="header__search-box">
-                                <Input
-                                    placeholder="search for items"
-                                    className="px-5 text-lg !text-shop-gray-300"
-                                    compsize="md"
-                                />
+                                   <Input variant="primary" compsize="md" placeholder="search" />
+
                             </div>
                             {/* Mobile menu button */}
-                            <div className="flex lg:hidden">
+                            <div className="flex lg:hidden ">
                                 <button
                                     onClick={toggleMenu}
                                     type="button"
@@ -59,7 +56,7 @@ export const Header: React.FC = () => {
                                     aria-label="toggle menu"
                                 >
                                     {isOpen ? (
-                                        <IconBar strokeWidth={3} />
+                                        <IconBar strokeWidth={3}  className='stroke-block-900'/>
                                     ) : (
                                         <HeaderMobile />
                                     )}

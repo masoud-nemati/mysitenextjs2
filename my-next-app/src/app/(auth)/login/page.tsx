@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import ImageComponent from "@/app/_components/image/ImageComponent";
-
+import { Input } from "@/app/_components/input";
 export default function LoginForm() {
   const [email, setEmail] = useState("");
 
@@ -22,11 +22,8 @@ export default function LoginForm() {
             <p className="mb-6 text-gray-300">Sign in with your email to continue</p>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="p-3 rounded-lg text-black"
-                value={email}
+               <Input variant="info"  placeholder="Enter your email..." helperText="We'll never share your email" 
+
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
