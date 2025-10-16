@@ -1,17 +1,29 @@
 
 import { Button } from "../_components/button"
-
 import { Input } from "../_components/input";
 import { IconAccount, IconCart, IconEmail } from "../_components/icons/icons"
 
+import { COUNTDOWN_TARGET_DATE } from '@/configs/countdown'
+import { ProductGroups } from "../_components/products/product-groups/product-groups";
+import { CountdownTimer } from "../_components/timer/timer";
+
 export default function Home() {
   return (
-    <div className="p-8 space-y-6 bg-gray-100 min-h-screen">
+    <section className="container-fluid mx-auto flex flex-col items-center space-y-[50px] py-16">
 
 
-      masoud nemati
-{/* 
-      <Button variant="primary">primary</Button>
+      <ProductGroups />
+
+    <CountdownTimer targetDate={COUNTDOWN_TARGET_DATE} />
+
+
+      <section className="containerD">
+
+
+      </section>
+
+
+      {/* <Button variant="primary">primary</Button>
       <Button variant="secondary">secondary</Button>
       <Button variant="success">success</Button>
       <Button variant="danger">danger</Button>
@@ -37,6 +49,6 @@ export default function Home() {
       <Input variant="danger" compsize="md" placeholder="Danger input" />
       <Input variant="warning" compsize="md" placeholder="Warning input" />
       <Input variant="info" compsize="md" placeholder="Info input" /> */}
-    </div>
+    </section>
   );
 }
