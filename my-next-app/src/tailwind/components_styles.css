@@ -3,4 +3,5 @@
 @import "./component/input.css";
 @import "./component/header-icons.css";
 @import "./component/login.css";
-@import "./component/timer.css"
+@import "./component/timer.css";
+@import "./component/attribute.css";

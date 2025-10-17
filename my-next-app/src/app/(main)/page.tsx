@@ -1,4 +1,4 @@
-
+import { AttributeSection } from "../_components/attribute-section";
 import { Button } from "../_components/button"
 import { Input } from "../_components/input";
 import { IconAccount, IconCart, IconEmail } from "../_components/icons/icons"
@@ -10,18 +10,17 @@ import { CountdownTimer } from "../_components/timer/timer";
 export default function Home() {
   return (
     <section className="container-fluid mx-auto flex flex-col items-center space-y-[50px] py-16">
-
-
       <ProductGroups />
-
-    <CountdownTimer targetDate={COUNTDOWN_TARGET_DATE} />
+      <section className="containerD">
+        <AttributeSection />
+      </section>
 
 
       <section className="containerD">
 
 
       </section>
-
+      {/* <CountdownTimer targetDate={COUNTDOWN_TARGET_DATE} /> */}
 
       {/* <Button variant="primary">primary</Button>
       <Button variant="secondary">secondary</Button>
