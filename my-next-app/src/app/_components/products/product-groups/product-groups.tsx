@@ -3,14 +3,12 @@ import React from 'react'
 import { ProductGroup } from './product-group/product-group'
 
 
-
-
 export const ProductGroups = () => {
-    return (
-        <div className="mx-auto flex justify-between gap-15">
-            {productsGroups.map((group) => (
-                <ProductGroup key={group.id} {...group} />
-            ))}
-        </div>
-    )
-}
+  return (
+    <div className="containerD flex flex-wrap justify-center sm:justify-between gap-6 px-4 md:px-8">
+      {productsGroups.map((group) => (
+        <ProductGroup key={group.id} {...group} />
+      ))}
+    </div>
+  );
+};

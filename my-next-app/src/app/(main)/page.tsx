@@ -1,4 +1,7 @@
 import { AttributeSection } from "../_components/attribute-section";
+import ProductList from "../_components/products/product-list/product-list";
+
+import { FlexBoxes } from "../_components/testcomp/testbox";
 import { Button } from "../_components/button"
 import { Input } from "../_components/input";
 import { IconAccount, IconCart, IconEmail } from "../_components/icons/icons"
@@ -10,16 +13,27 @@ import { CountdownTimer } from "../_components/timer/timer";
 export default function Home() {
   return (
     <section className="container-fluid mx-auto flex flex-col items-center space-y-[50px] py-16">
+      <h1>Masoud Nemati</h1>
       <ProductGroups />
       <section className="containerD">
         <AttributeSection />
+
       </section>
+
 
 
       <section className="containerD">
-
+        {/* <FlexBoxes/> */}
 
       </section>
+
+      <section className="containerD">
+        <ProductList />
+      </section>
+
+
+
+
       {/* <CountdownTimer targetDate={COUNTDOWN_TARGET_DATE} /> */}
 
       {/* <Button variant="primary">primary</Button>
