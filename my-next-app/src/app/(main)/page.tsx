@@ -1,6 +1,8 @@
 import { AttributeSection } from "../_components/attribute-section";
 import ProductList from "../_components/products/product-list/product-list";
-
+import SpecialOffersBanner from "../_components/special-offers-banner/special-offers-banner";
+import {SmallBanner} from "../_components/small-baner/small-baner"
+import {smallBannerData} from "@/data/small-baner-data"
 import { FlexBoxes } from "../_components/testcomp/testbox";
 import { Button } from "../_components/button"
 import { Input } from "../_components/input";
@@ -31,7 +33,13 @@ export default function Home() {
         <ProductList />
       </section>
 
+      <section className="containerD">
+        <SpecialOffersBanner />
+      </section>
 
+        <main className="containerD">
+          <SmallBanner data={smallBannerData} />
+    </main>
 
 
       {/* <CountdownTimer targetDate={COUNTDOWN_TARGET_DATE} /> */}

@@ -1,1 +1,1 @@
-export type TagStatus = 'warning' | 'success' | 'danger'
+export type TagStatus = 'warning' | 'success' | 'danger'| null
