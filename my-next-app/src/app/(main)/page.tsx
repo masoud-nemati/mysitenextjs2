@@ -2,7 +2,9 @@ import { AttributeSection } from "../_components/attribute-section";
 import ProductList from "../_components/products/product-list/product-list";
 import SpecialOffersBanner from "../_components/special-offers-banner/special-offers-banner";
 import {SmallBanner} from "../_components/small-baner/small-baner"
-import {smallBannerData} from "@/data/small-baner-data"
+import {smallBannerData} from "@/data/small-baner-data";
+import LatestBlogs from "@/app/_components/blogs/latest-blogs/latest-blogs";
+
 import { FlexBoxes } from "../_components/testcomp/testbox";
 import { Button } from "../_components/button"
 import { Input } from "../_components/input";
@@ -40,6 +42,12 @@ export default function Home() {
         <main className="containerD">
           <SmallBanner data={smallBannerData} />
     </main>
+
+
+
+        <section className="containerD">
+               <LatestBlogs/>
+            </section>
 
 
       {/* <CountdownTimer targetDate={COUNTDOWN_TARGET_DATE} /> */}
