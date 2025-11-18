@@ -13,41 +13,33 @@ import { IconAccount, IconCart, IconEmail } from "../_components/icons/icons"
 import { COUNTDOWN_TARGET_DATE } from '@/configs/countdown'
 import { ProductGroups } from "../_components/products/product-groups/product-groups";
 import { CountdownTimer } from "../_components/timer/timer";
+import { redirect } from "next/navigation";
+
+
 
 export default function Home() {
+  
+
   return (
-    <section className="container-fluid mx-auto flex flex-col items-center space-y-[50px] py-16">
+   <section className="container-fluid mx-auto flex flex-col items-center space-y-[50px] py-16">
       <h1>Masoud Nemati</h1>
       <ProductGroups />
       <section className="containerD">
         <AttributeSection />
-
       </section>
-
-
-
-      <section className="containerD">
-        {/* <FlexBoxes/> */}
-
-      </section>
-
       <section className="containerD">
         <ProductList />
       </section>
-
       <section className="containerD">
         <SpecialOffersBanner />
       </section>
-
-        <main className="containerD">
-          <SmallBanner data={smallBannerData} />
-    </main>
-
-
-
-        <section className="containerD">
-               <LatestBlogs/>
-            </section>
+      <main className="containerD">
+        <SmallBanner data={smallBannerData} />
+      </main>
+      <section className="containerD">
+        <LatestBlogs/>
+      </section>
+   
 
 
       {/* <CountdownTimer targetDate={COUNTDOWN_TARGET_DATE} /> */}
