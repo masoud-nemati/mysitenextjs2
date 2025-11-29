@@ -1,0 +1,12 @@
+.button {
+    @apply fixed bottom-24 right-4 z-[999]
+    hidden
+    size-8 cursor-pointer items-center justify-center
+    rounded-full bg-shop-gray-600 text-md font-semibold text-white
+    opacity-0 outline-none
+    transition-opacity duration-200 ease-out;
+}
+
+.buttonVisible {
+    @apply opacity-100;
+}

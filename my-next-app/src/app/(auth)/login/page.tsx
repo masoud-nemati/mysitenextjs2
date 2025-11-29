@@ -20,22 +20,23 @@ export default function LoginForm() {
         <div className="relative w-full h-full bg-gray-900 rounded-2xl flex md:flex-row flex-col overflow-hidden box-border">
           {/* ستون فرم */}
           <div className="flex-1 flex flex-col justify-center px-8 py-10">
-            <h1 className="text-3xl font-bold mb-4 text-white">Welcome Back</h1>
+            <h1 className="text-3xl font-bold mb-4 text-white">Welcome my sait </h1>
+            <h2 className="text-3xl font-bold mb-4 text-white">Masoud Nemati </h2>
             <p className="mb-6 text-gray-300">Sign in with your email to continue (optional)</p>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md">
               <Input
-                variant="info"
-                placeholder="Enter your email (optional)..."
+               placeholder="Enter your email (optional)..."
                 helperText="We'll never share your email"
+                 variant="info"
                 onChange={(e) => setEmail(e.target.value)}
                 // required حذف شد
               />
               <button
                 type="submit"
-                className="bg-pink-600 hover:bg-pink-700 text-white py-3 rounded-lg font-semibold"
+                className="bg-pink-600 hover:bg-pink-700 text-white w-80 py-2 rounded-sm font-semibold"
               >
-                Login
+                vizit
               </button>
             </form>
           </div>

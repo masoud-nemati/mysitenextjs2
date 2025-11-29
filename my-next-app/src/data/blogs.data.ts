@@ -49,7 +49,7 @@ export const BlogsData :IBlogCardProp[]= [
 
 
   {
-      id: "1",
+      id: "6",
       title: "Next.js: The Future of Web Development",
       srcImage: "/images/blog-img/blog-1.jpg",
       label: "Development",
