@@ -1,4 +1,4 @@
-export interface IBlogCardProp  {
+export interface IBlogCardProps  {
     id:string
     srcImage: string
     label: string

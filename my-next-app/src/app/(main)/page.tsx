@@ -4,6 +4,9 @@ import SpecialOffersBanner from "../_components/special-offers-banner/special-of
 import {SmallBanner} from "../_components/small-baner/small-baner"
 import {smallBannerData} from "@/data/small-baner-data";
 import LatestBlogs from "@/app/_components/blogs/latest-blogs/latest-blogs";
+import ImageSlider from "@/app/_components/ImageSlider/ImageSlider";
+
+
 
 import { FlexBoxes } from "../_components/testcomp/testbox";
 import { Button } from "../_components/button"
@@ -24,6 +27,12 @@ export default function Home() {
    <section className="container-fluid mx-auto flex flex-col items-center space-y-[50px] py-16">
       <h1>Masoud Nemati</h1>
       <ProductGroups />
+
+    <section className="containerD">
+        <ImageSlider/>
+      </section>
+
+
       <section className="containerD">
         <AttributeSection />
       </section>

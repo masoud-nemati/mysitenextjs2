@@ -1,1 +1,1 @@
-export * from './blogCard'
+export * from './blog-card'

@@ -1,10 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
-import Tag from '../../tag/tag'
 import Link from 'next/link'
-import { IBlogCardProp } from './blogCard.types'
+import { IBlogCardProps } from './blog-card.types'
+import Tag from '@/app/_components/tag/tag'
 
-export const BlogCard: React.FC<IBlogCardProp> = ({
+export const BlogCard: React.FC<IBlogCardProps> = ({
     id,
     srcImage,
     label,
@@ -15,18 +15,20 @@ export const BlogCard: React.FC<IBlogCardProp> = ({
 }) => {
     return (
         <>
+        
             <Link
                 href={`/blog/${slug}`}
                 className="flex w-[319px] flex-col gap-y-3"
             >
+                {/* <h3>{id}</h3> */}
                 {/* img */}
                 <div className="relative h-[186px] w-[319px] rounded-md">
-                    <Image
-                        src={srcImage}
-                        className="h-full w-full rounded-md object-cover"
-                        fill
-                        alt="blogImage"
-                    />
+                  <Image
+    src={srcImage}
+    className="h-full w-full rounded-md object-cover"
+    fill
+    alt="blogImage"
+/>
                 </div>
                 <Tag tag_title={label} />
 

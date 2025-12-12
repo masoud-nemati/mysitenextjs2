@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { BlogsData } from '@/data/blogs.data'
-import { BlogCard } from './blogCard'
+import { BlogCard } from './blog-card'
 
 
 

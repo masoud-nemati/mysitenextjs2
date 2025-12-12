@@ -17,8 +17,7 @@ const LatestBlogs = () => {
             {/* blog card wrapper*/}
             <div className="mt-9 flex w-full flex-wrap  justify-center gap-5">
                 {BlogsData.slice().map((blog, index) => (
-                    
-                    <BlogCard
+                <BlogCard
                         key={blog.id}
                         id={blog.id}
                         srcImage={blog.srcImage}
