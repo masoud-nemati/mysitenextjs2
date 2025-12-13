@@ -1,21 +1,21 @@
-import { AttributeSection } from "../_components/attribute-section";
-import ProductList from "../_components/products/product-list/product-list";
-import SpecialOffersBanner from "../_components/special-offers-banner/special-offers-banner";
-import {SmallBanner} from "../_components/small-baner/small-baner"
+import { AttributeSection } from "../_components/features/attribute-section";
+import ProductList from "../_components/features/products/product-list/product-list";
+import SpecialOffersBanner from "../_components/section/special-offers-banner/special-offers-banner";
+import {SmallBanner} from "../_components/section/small-baner/small-baner"
 import {smallBannerData} from "@/data/small-baner-data";
-import LatestBlogs from "@/app/_components/blogs/latest-blogs/latest-blogs";
-import ImageSlider from "@/app/_components/ImageSlider/ImageSlider";
+import LatestBlogs from "@/app/_components/features/blogs/latest-blogs/latest-blogs";
+import ImageSlider from "@/app/_components/section/ImageSlider/ImageSlider";
 
 
 
-import { FlexBoxes } from "../_components/testcomp/testbox";
-import { Button } from "../_components/button"
-import { Input } from "../_components/input";
-import { IconAccount, IconCart, IconEmail } from "../_components/icons/icons"
+import { FlexBoxes } from "../_components/section/testcomp/testbox";
+import { Button } from "../_components/ui/button"
+import { Input } from "../_components/ui/input";
+import { IconAccount, IconCart, IconEmail } from "../_components/ui/icons/icons"
 
 import { COUNTDOWN_TARGET_DATE } from '@/configs/countdown'
-import { ProductGroups } from "../_components/products/product-groups/product-groups";
-import { CountdownTimer } from "../_components/timer/timer";
+import { ProductGroups } from "../_components/features/products/product-groups/product-groups";
+import { CountdownTimer } from "../_components/ui/timer/timer";
 import { redirect } from "next/navigation";
 
 

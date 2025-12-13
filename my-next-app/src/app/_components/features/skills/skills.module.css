@@ -1,0 +1,88 @@
+/* skills.module.css */
+.skillsPage {
+  padding: 2rem;
+}
+
+.h2skill {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+
+  color: #2563eb;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+.h2skill::after {
+  content: "";
+  display: block;
+  width: 150px;          /* 👈 عرض خط */
+  height: 2px;
+  background-color: #2563eb;
+  margin: 12px auto 0;   /* وسط‌چین */
+  border-radius: 999px;
+}
+
+.sectionTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+
+  color: #393766;          /* 👈 سورمه‌ای */
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 3px;
+  background-color: #a36e17; /* هم‌رنگ عنوان */
+  margin-top: 8px;
+  border-radius: 999px;
+}
+
+
+
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;     
+  justify-content: center;
+}
+
+
+.skillCard {
+  background: #cebcbc;
+  padding: 2rem;          
+  border-radius: 16px;
+
+  width: 360px;          
+  text-align: center;
+
+  display: flex;          
+  flex-direction: column;
+  align-items: center;    
+  gap: 0.8rem;
+}
+
+
+.skillLogo {
+  margin-bottom: 0.5rem;
+  
+}
+
+.skillName {
+  display: block;
+  font-weight: bold;
+}
+
+.meter {
+  width: 100%;
+}
+
+.skillLevel {
+  font-size: 0.9rem;
+}

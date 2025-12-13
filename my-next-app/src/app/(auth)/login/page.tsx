@@ -1,8 +1,8 @@
 "use client";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import { useRouter } from "next/navigation";
-import ImageComponent from "@/app/_components/image/ImageComponent";
-import { Input } from "@/app/_components/input";
+import ImageComponent from "@/app/_components/section/image/ImageComponent";
+import { Input } from "@/app/_components/ui/input";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -29,7 +29,7 @@ export default function LoginForm() {
                placeholder="Enter your email (optional)..."
                 helperText="We'll never share your email"
                  variant="info"
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e: { target: { value: SetStateAction<string>; }; }) => setEmail(e.target.value)}
                 // required حذف شد
               />
               <button

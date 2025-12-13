@@ -1,4 +1,4 @@
-import { ISpecialOffersBannerItem } from "@/app/_components/special-offers-banner/special-offers-banner-item/special-offers-banner-item.types";
+import { ISpecialOffersBannerItem } from "@/app/_components/section/special-offers-banner/special-offers-banner-item/special-offers-banner-item.types";
 
 export const SpecialOffersBannerData:ISpecialOffersBannerItem[] = [
     {

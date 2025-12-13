@@ -1,4 +1,4 @@
-import { SmallBannerData } from "@/app/_components/small-baner/small-baner.type";
+import { SmallBannerData } from "@/app/_components/section/small-baner/small-baner.type";
 
 
 

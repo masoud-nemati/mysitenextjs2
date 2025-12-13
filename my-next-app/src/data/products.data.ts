@@ -1,4 +1,4 @@
-import { IProductCard } from "@/app/_components/products/product-card/product-card.types"
+import { IProductCard } from "@/app/_components/features/products/product-card/product-card.types"
 
 export const ProductListData: IProductCard[] = [
   {

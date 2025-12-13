@@ -1,10 +1,10 @@
 import { BLOGS_PER_PAGE } from '@/configs/itemsPerPage';
 import { BlogsData } from '@/data/blogs.data';
-import { BreadCrumbItem } from '@/app/_components/bread-crumbs/bread-crumbs.types';
-import AllBlogs from '@/app/_components/blogs/all-blogs/all-blogs';
-import BigBanner from '@/app/_components/big-banner/big-banner';
-import BreadCrumbs from '@/app/_components/bread-crumbs/bread-crumbs';
-import Pagination from '@/app/_components/pagination/pagination';
+import { BreadCrumbItem } from '@/app/_components/ui/bread-crumbs/bread-crumbs.types';
+import AllBlogs from '@/app/_components/features/blogs/all-blogs/all-blogs';
+import BigBanner from '@/app/_components/section/big-banner/big-banner';
+import BreadCrumbs from '@/app/_components/ui/bread-crumbs/bread-crumbs';
+import Pagination from '@/app/_components/ui/pagination/pagination';
 
 export default function Blog({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
 
