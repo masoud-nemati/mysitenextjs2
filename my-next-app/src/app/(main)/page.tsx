@@ -1,10 +1,12 @@
 import { AttributeSection } from "../_components/features/attribute-section";
 import ProductList from "../_components/features/products/product-list/product-list";
 import SpecialOffersBanner from "../_components/section/special-offers-banner/special-offers-banner";
-import {SmallBanner} from "../_components/section/small-baner/small-baner"
-import {smallBannerData} from "@/data/small-baner-data";
+import { SmallBanner } from "../_components/section/small-baner/small-baner"
+import { smallBannerData } from "@/data/small-baner-data";
 import LatestBlogs from "@/app/_components/features/blogs/latest-blogs/latest-blogs";
 import ImageSlider from "@/app/_components/section/ImageSlider/ImageSlider";
+import CommentSection from "../_components/section/CommentSection";
+import ImageComponent from "@/app/_components/section/image/ImageComponent";
 
 
 
@@ -21,15 +23,15 @@ import { redirect } from "next/navigation";
 
 
 export default function Home() {
-  
+
 
   return (
-   <section className="container-fluid mx-auto flex flex-col items-center space-y-[50px] py-16">
+    <section className="container-fluid mx-auto flex flex-col items-center space-y-[50px] py-16">
       <h1>Masoud Nemati</h1>
       <ProductGroups />
 
-    <section className="containerD">
-        <ImageSlider/>
+      <section className="containerD">
+        <ImageSlider />
       </section>
 
 
@@ -46,9 +48,22 @@ export default function Home() {
         <SmallBanner data={smallBannerData} />
       </main>
       <section className="containerD">
-        <LatestBlogs/>
+        <LatestBlogs />
       </section>
+      <section className="containerD">
+        <CommentSection />
+      </section>
+
+
+       <section className="containerD">
+   <ImageComponent
+          width={700}
+          height={500} src={"/images/imagslider/Picsart.jpg"} alt={""}   
    
+   />
+      </section>
+      
+
 
 
       {/* <CountdownTimer targetDate={COUNTDOWN_TARGET_DATE} /> */}

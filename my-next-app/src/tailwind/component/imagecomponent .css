@@ -1,0 +1,22 @@
+.image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 16px;
+  margin: 64px auto;
+  max-width: 900px;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.image-section__img {
+  border-radius: 16px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-section__img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}

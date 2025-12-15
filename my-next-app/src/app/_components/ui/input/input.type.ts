@@ -1,5 +1,5 @@
 import { InputHTMLAttributes, RefAttributes } from "react";
-import { BaseComponent } from "../base.component.type";
+import { BaseComponent } from "@/app/_components/base.component.type";
 
 
 export type InputType = "text" | "number" | "password" | "email";
