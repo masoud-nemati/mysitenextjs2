@@ -7,7 +7,7 @@ import LatestBlogs from "@/app/_components/features/blogs/latest-blogs/latest-bl
 import ImageSlider from "@/app/_components/section/ImageSlider/ImageSlider";
 import CommentSection from "../_components/section/CommentSection";
 import ImageComponent from "@/app/_components/section/image/ImageComponent";
-
+import AboutSection from "@/app/_components/features/sections/AboutSection";
 
 
 import { FlexBoxes } from "../_components/section/testcomp/testbox";
@@ -62,6 +62,11 @@ export default function Home() {
    
    />
       </section>
+
+      <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      {/* فقط کامپوننت درباره ما رو صدا می‌کنیم */}
+      <AboutSection />
+    </main>
       
 
 
