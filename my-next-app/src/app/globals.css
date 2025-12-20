@@ -4,6 +4,7 @@
 
 
 
+
 @layer utilities {
     .container-fluid {
         @apply px-2 md:px-4;
