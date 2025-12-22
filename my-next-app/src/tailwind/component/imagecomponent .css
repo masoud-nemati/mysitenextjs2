@@ -20,3 +20,36 @@
   transform: scale(1.06);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
 }
+@media (hover: hover) {
+  .image-section__img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* 📱 موبایل */
+@media (max-width: 768px) {
+  .image-section {
+    padding: 24px 12px;
+    margin: 32px 12px;
+    border-radius: 16px;
+  }
+
+  .image-section__img {
+    max-width: 100%;
+    border-radius: 14px;
+  }
+}
+
+/* 📱 موبایل خیلی کوچک */
+@media (max-width: 480px) {
+  .image-section {
+    padding: 20px 10px;
+    margin: 24px 10px;
+    border-radius: 14px;
+  }
+
+  .image-section__img {
+    border-radius: 12px;
+  }
+}

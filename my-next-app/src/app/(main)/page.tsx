@@ -9,7 +9,6 @@ import CommentSection from "../_components/section/CommentSection";
 import ImageComponent from "@/app/_components/section/image/ImageComponent";
 import AboutSection from "@/app/_components/features/sections/AboutSection";
 
-
 import { FlexBoxes } from "../_components/section/testcomp/testbox";
 import { Button } from "../_components/ui/button"
 import { Input } from "../_components/ui/input";
@@ -20,15 +19,12 @@ import { ProductGroups } from "../_components/features/products/product-groups/p
 import { CountdownTimer } from "../_components/ui/timer/timer";
 import { redirect } from "next/navigation";
 
-
-
 export default function Home() {
-
 
   return (
     <section className="container-fluid mx-auto flex flex-col items-center space-y-[50px] py-16">
-      <h1>Masoud Nemati</h1>
-      <ProductGroups />
+      <h1>welcome my site</h1>
+      {/* <ProductGroups /> */}
 
       <section className="containerD">
         <ImageSlider />
@@ -38,12 +34,12 @@ export default function Home() {
       <section className="containerD">
         <AttributeSection />
       </section>
-      <section className="containerD">
+      {/* <section className="containerD">
         <ProductList />
-      </section>
-      <section className="containerD">
+      </section> */}
+      {/* <section className="containerD">
         <SpecialOffersBanner />
-      </section>
+      </section> */}
       <main className="containerD">
         <SmallBanner data={smallBannerData} />
       </main>
@@ -55,19 +51,20 @@ export default function Home() {
       </section>
 
 
-       <section className="containerD">
-   <ImageComponent
-          width={700}
-          height={500} src={"/images/imagslider/Picsart.jpg"} alt={""}   
-   
-   />
+      <section className="containerD">
+        <ImageComponent
+          src="/images/imagslider/Picsart.jpg"
+          alt="Family"
+          className="responsive-img"
+        />
       </section>
 
+
       <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-      {/* فقط کامپوننت درباره ما رو صدا می‌کنیم */}
-      <AboutSection />
-    </main>
-      
+        {/* فقط کامپوننت درباره ما رو صدا می‌کنیم */}
+        <AboutSection />
+      </main>
+
 
 
 

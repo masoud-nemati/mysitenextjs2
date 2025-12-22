@@ -1,13 +1,21 @@
-// src/app/_components/section/image/img.type.ts
+// img.type.ts
 import { ComponentPropsWithoutRef } from "react";
-import { clsx, ClassValue } from "clsx"; // اگر از clsx استفاده می‌کنی
 
 export interface ImageData extends ComponentPropsWithoutRef<"img"> {
-  id: string;
+  id?: string;
+
   src: string;
   alt: string;
-  width: number;
-  height: number;
-  // className حتماً string باشه
-  className?: string; // یا ClassValue اگر از clsx استفاده می‌کنی
+
+  /** اگر داده شود → fixed size */
+  width?: number;
+  height?: number;
+
+  /** اگر true باشد → fill mode */
+  fill?: boolean;
+
+  /** کنترل نسبت تصویر در حالت fill */
+  ratio?:string;
+
+  className?: string;
 }

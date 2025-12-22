@@ -4,11 +4,16 @@ import Image from "next/image";
 import { useState } from "react";
 import type { ImageData } from "./img.type";
 
-type ImageComponentProps = Omit<ImageData, "id">;
+type ImageComponentProps = Omit<ImageData, "id"> & {
+  maxWidth?: number;
+  ratio?: string; // مثل "16 / 9"
+};
 
 export default function ImageComponent({
   src = "/images/imagslider/Picsart.jpg",
   alt = "decorative image",
+  maxWidth = 700,
+  ratio = "7 / 6",
 }: ImageComponentProps) {
   const [hover, setHover] = useState(false);
 
@@ -18,8 +23,9 @@ export default function ImageComponent({
       onMouseLeave={() => setHover(false)}
       style={{
         position: "relative",
-        width: "700px",
-        height: "600px",
+        width: "100%",
+        maxWidth: `${maxWidth}px`,
+        aspectRatio: ratio,
         margin: "20px auto",
         background: "linear-gradient(135deg, #0f172a, #020617)",
         borderRadius: "20px",
@@ -35,7 +41,7 @@ export default function ImageComponent({
         src={src}
         alt={alt}
         fill
-        priority
+        sizes="(max-width: 768px) 100vw, 700px"
         style={{
           objectFit: "cover",
           transform: hover ? "scale(1.08)" : "scale(1)",
@@ -43,7 +49,6 @@ export default function ImageComponent({
         }}
       />
 
-      {/* glow */}
       <div
         style={{
           position: "absolute",

@@ -1,60 +1,92 @@
 // src/app/_components/sections/AboutSection.tsx
-import AppText from "@/app/_components/features/contact/AppText";
+
 import ImageComponent from "@/app/_components/section/image/ImageComponent";
+import CommentSection from "../../section/CommentSection";
 
 export default function AboutSection() {
   return (
-    <section className="py-12 px-4 max-w-4xl mx-auto">
-      <div className="space-y-8 text-lg">
+    <div className='about-main'>
+      <div className="about-us">
+        <h1>I am:</h1>
 
-        {/* سفر من */}
-        <div className="space-y-4">
-          {/* عنوان اصلی - فاصله کمتر شده */}
-          <AppText name="aboutTitle" className="about-main-title mb-4" />
+        <div className='about-div'>
+          <h2 className='about-h2'>My Journey</h2>
+          <p className="p-1">
+            Programming is my passion, and <span className="highlight">I love it and am constantly striving to grow in coding</span>.
+            Right now, I&apos;m diving into JavaScript, TypeScript, React, and Kotlin.
+            <br />
+            <span className="highlight">
+              God has helped me a lot and has changed my life.
+            </span>
+          </p>
 
-          {/* زیرعنوان سفر من */}
-          <AppText name="aboutJourneyTitle" className="about-section-title mb-4" />
 
-          {/* پاراگراف‌های بدنه - فاصله کمتر */}
-          <div className="space-y-3 text-justify bg-amber-300">
-            <AppText name="aboutJourney" />
-            <AppText name="aboutFamily" />
-            <AppText name="aboutLocation" />
-            <AppText name="aboutDreams" />
-          </div>
+
+          <p className='p-1'>
+            But above all, my family means so much to me. I live <span className="highlight">with</span>  my wonderful wife and our two amazing kids, and I love them more than anything.
+            They are my biggest motivation to keep going.
+          </p>
+
+          <p className='p-1'>
+            I used to live in Iran, but now I&apos;m in Turkey. Moving here has come with its challenges, but it has also given me the chance to learn new things and face new experiences.
+          </p>
+
+          <p className='p-1'>
+            I&apos;m always eager to learn and improve my skills. My dreams are big, and I hope that one day, I can make a positive impact on the world through my work.
+          </p>
         </div>
 
-        {/* تصویر خانواده - فاصله کمتر */}
-        <div className="flex justify-center my-8">
+
+        <div className="flex justify-center">
           <ImageComponent
-            src="/images/imagslider/Picsart1.jpg"
-            alt="خانواده من"
-            width={800}
-            height={500}
-            className="rounded-2xl shadow-2xl object-cover w-full max-w-2xl"
+            src="/images/imagslider/imgf.jpg"
+            alt="small"
+            maxWidth={600}
+            ratio="4 / 3"
           />
         </div>
 
-        {/* تجربیات */}
-        <div className="bg-gray-500 p-1 rounded-3xl space-y-5">
-          <AppText name="aboutExperiencesIntro" className="text-justify" />
 
-          {/* مهارت‌های صنعتی */}
-          <AppText name="aboutIndustryTitle" className="about-subsection-title " />
-          <AppText name="aboutIndustryList" className="about-list-industry" />
 
-          {/* الهیات و نوشتن - فاصله از بخش قبلی */}
-          <AppText name="aboutTheologyTitle" className="about-subsection-title mb-4 mt-6" />
-          <AppText name="aboutTheologyList" className="about-list-theology" />
+        <div className='about-div'>
+
+          <p>Throughout my life, I have gained various experiences and developed skills in different fields. From technology and programming to industrial welding and theology, all of these skills have been part of my growth journey.</p>
+
+
+          <h3 className='about-h3'>Industry and Technical Skills</h3>
+          <ul>
+            <li><strong>CO2 Welding</strong> – Skilled in semi-automatic welding with carbon dioxide gas.</li>
+            <li><strong>Argon Welding (TIG)</strong> – Experienced in precise and clean welding on various metals.</li>
+            <li><strong>Laser Welding</strong> – Using laser technology for high-precision welding of parts.</li>
+          </ul>
+
+          <h3 className='about-h3'>Theology and Writing</h3>
+          <ul>
+            <li><strong>Christian Theology</strong> – Studying and examining faith, spirituality, and biblical teachings.</li>
+            <li><strong>Editor</strong> – Writing and editing articles.</li>
+          </ul>|
         </div>
 
-        {/* وضعیت فعلی - فاصله از بخش قبلی */}
-        <div className="bg-primary/5 p-1 rounded-3xl space-y-4 mt-8  bg-amber-300">
-          <AppText name="aboutNowTitle" className="about-section-title " />
-          <AppText name="aboutNowList" className="about-list-now" />
+
+        <div className='about-div'>
+          <h2 className='about-h2'>Now</h2>
+          <ul className="status-list">
+            <li>Working at <strong>Townlit</strong> Company</li>
+            <li>Working at a <strong>Welding</strong> Company</li>
+            <li>Student of <strong>Programming</strong></li>
+            <li>Student of <strong>Christian Theology</strong></li>
+          </ul>
         </div>
+        
+        <div className='about-div'>
+                 <CommentSection />
+        </div>
+
+
+
 
       </div>
-    </section>
+
+    </div>
   );
 }
