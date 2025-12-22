@@ -2,68 +2,101 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import type { ImageSliderProps } from "./imageslaider.type";
 
-const ImageSlider = () => {
-    const images = [
-        "/images/imagslider/slaidimg.jpg",
-        "/images/imagslider/bodyimg.jpg",
-        "/images/imagslider/image.jpg",
-        "/images/imagslider/Picsart10.jpg",
-        "/images/imagslider/baner.webp",
-    ];
+export default function ImageSlider({
+    images,
+    height = 400,
+    maxWidth = "max-w-4xl",
+}: ImageSliderProps) {
+    const [index, setIndex] = useState(0);
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [showImage, setShowImage] = useState(true);
+    const next = () => {
+        setIndex((prev) => (prev + 1) % images.length);
+    };
 
-    const changeImage = () => {
-        setCurrentIndex((prev) => (prev + 1) % images.length);
+    const prev = () => {
+        setIndex((prev) => (prev - 1 + images.length) % images.length);
     };
 
     return (
-        <>
-            {showImage && (
-                <div
-                    className="
-            relative 
-            w-full 
-            max-w-3xl 
-            mx-auto 
-            rounded-2xl 
-            overflow-hidden 
-            shadow-xl 
-            cursor-pointer 
-            group
-          "
-                    onClick={changeImage}
+        <div
+            className={`relative w-full ${maxWidth} mx-auto overflow-hidden rounded-2xl shadow-xl`}
+            style={{ height }}
+        >
+            {/* Image */}
+            <Image
+                src={images[index]}
+                alt="slider image"
+                fill
+                sizes="100vw"
+                className="object-cover transition-opacity duration-500"
+                priority
+            />
+
+            {/* Left Button */}
+            <button
+                onClick={prev}
+                aria-label="Previous image"
+                className="
+    absolute left-4 top-1/2 -translate-y-1/2
+    w-12 h-12 rounded-full
+    flex items-center justify-center
+
+    bg-gradient-to-br from-cyan-400/80 to-blue-600/80
+    text-white
+    backdrop-blur-md
+    shadow-lg shadow-blue-500/40
+
+    hover:scale-110 active:scale-95
+    transition-all duration-300
+  "
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
                 >
-                    {/* Fade Animation */}
-                    <div className="transition-opacity duration-700 ease-in-out opacity-100">
-                        <Image
-                            className="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-700"
-                            src={images[currentIndex]}
-                            alt="slideshow"
-                            width={1000}
-                            height={500}
-                        />
-                    </div>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
 
-                    {/* Overlay Text */}
-                    <div
-                        className="
-              absolute inset-0 
-              bg-black/30 
-              flex items-center justify-center 
-              text-white text-xl 
-              opacity-0 group-hover:opacity-100 
-              transition-opacity duration-500
-            "
-                    >
-                        🔄 Click to Change
-                    </div>
-                </div>
-            )}
-        </>
+
+
+            {/* Right Button */}
+            <button
+                onClick={next}
+                aria-label="Next image"
+                className="
+    absolute right-4 top-1/2 -translate-y-1/2
+    w-12 h-12 rounded-full
+    flex items-center justify-center
+
+    bg-gradient-to-br from-purple-500/80 to-pink-600/80
+    text-white
+    backdrop-blur-md
+    shadow-lg shadow-pink-500/40
+
+    hover:scale-110 active:scale-95
+    transition-all duration-300
+  "
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
+                >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+
+
+        </div>
     );
-};
-
-export default ImageSlider;
+}

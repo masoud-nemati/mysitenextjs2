@@ -2,6 +2,7 @@
   width: 100vw;
   margin-left: calc(50% - 50vw); /* ← مهم */
   padding: 6px;
+  border-radius: 15px;
 
   background: conic-gradient(
     from 0deg,
@@ -17,9 +18,9 @@
 
 /* ===== Inner Container ===== */
 .about-us {
-  max-width: 1200px;
   width: 100%;
-  margin: 0 auto;
+  max-width: none;   /* ← خیلی مهم */
+  margin: 0;
 
   background: #f9fafb;
   border-radius: 20px;
@@ -45,7 +46,7 @@
   padding: 24px 28px;
   margin: 24px auto;
 
-  max-width: 900px;
+  max-width: 1200px;
 
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -107,7 +108,7 @@
 }
 
 .about-div ul li strong {
-  color: #111827;
+  color: #1451d3;
 }
 
 /* ===== Image Section ===== */

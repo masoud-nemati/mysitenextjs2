@@ -1,72 +1,73 @@
 import { AttributeSection } from "../_components/features/attribute-section";
-import ProductList from "../_components/features/products/product-list/product-list";
-import SpecialOffersBanner from "../_components/section/special-offers-banner/special-offers-banner";
 import { SmallBanner } from "../_components/section/small-baner/small-baner"
 import { smallBannerData } from "@/data/small-baner-data";
 import LatestBlogs from "@/app/_components/features/blogs/latest-blogs/latest-blogs";
 import ImageSlider from "@/app/_components/section/ImageSlider/ImageSlider";
-import CommentSection from "../_components/section/CommentSection";
-import ImageComponent from "@/app/_components/section/image/ImageComponent";
 import AboutSection from "@/app/_components/features/sections/AboutSection";
+import { homeSliderImages } from "@/data/sliders";
+
+
+
 
 import { FlexBoxes } from "../_components/section/testcomp/testbox";
 import { Button } from "../_components/ui/button"
 import { Input } from "../_components/ui/input";
 import { IconAccount, IconCart, IconEmail } from "../_components/ui/icons/icons"
-
+import SpecialOffersBanner from "../_components/section/special-offers-banner/special-offers-banner";
+import ProductList from "../_components/features/products/product-list/product-list";
+import CommentSection from "../_components/section/CommentSection";
+import ImageComponent from "@/app/_components/section/image/ImageComponent";
 import { COUNTDOWN_TARGET_DATE } from '@/configs/countdown'
 import { ProductGroups } from "../_components/features/products/product-groups/product-groups";
 import { CountdownTimer } from "../_components/ui/timer/timer";
 import { redirect } from "next/navigation";
+
+
+
+
+
+
 
 export default function Home() {
 
   return (
     <section className="container-fluid mx-auto flex flex-col items-center space-y-[50px] py-16">
       <h1>welcome my site</h1>
-      {/* <ProductGroups /> */}
 
       <section className="containerD">
-        <ImageSlider />
+        <ImageSlider
+          images={homeSliderImages}
+          height={500}
+          maxWidth="max-w-6xl"
+        />
       </section>
-
 
       <section className="containerD">
         <AttributeSection />
       </section>
-      {/* <section className="containerD">
-        <ProductList />
-      </section> */}
-      {/* <section className="containerD">
-        <SpecialOffersBanner />
-      </section> */}
+
       <main className="containerD">
         <SmallBanner data={smallBannerData} />
       </main>
       <section className="containerD">
         <LatestBlogs />
       </section>
-      <section className="containerD">
-        <CommentSection />
-      </section>
-
-
-      <section className="containerD">
-        <ImageComponent
-          src="/images/imagslider/Picsart.jpg"
-          alt="Family"
-          className="responsive-img"
-        />
-      </section>
-
 
       <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-        {/* فقط کامپوننت درباره ما رو صدا می‌کنیم */}
         <AboutSection />
       </main>
 
 
 
+
+
+
+
+
+
+
+
+      {/* <ProductGroups /> */}
 
       {/* <CountdownTimer targetDate={COUNTDOWN_TARGET_DATE} /> */}
 
@@ -96,6 +97,26 @@ export default function Home() {
       <Input variant="danger" compsize="md" placeholder="Danger input" />
       <Input variant="warning" compsize="md" placeholder="Warning input" />
       <Input variant="info" compsize="md" placeholder="Info input" /> */}
+
+      {/* <section className="containerD">
+        <ImageComponent
+          src="/images/imagslider/Picsart.jpg"
+          alt="Family"
+          className="responsive-img"
+        />
+      </section> */}
+
+      {/* <section className="containerD">
+        <CommentSection />
+      </section> */}
+
+      {/* <section className="containerD">
+        <ProductList />
+      </section> */}
+      {/* <section className="containerD">
+        <SpecialOffersBanner />
+      </section> */}
+
     </section>
   );
 }

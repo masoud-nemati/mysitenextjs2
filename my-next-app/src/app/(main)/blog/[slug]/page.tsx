@@ -1,6 +1,6 @@
 import { fetchBlogBySlug } from '@/data/blogs.data';
 import { notFound } from 'next/navigation';
-import { BlogDetailsComponent } from '@/app/_components/features/blogs/blog-details/blog-details';
+import BlogDetailsComponent from '@/app/_components/features/blogs/blog-details/blog-details';
 import BreadCrumbs from '@/app/_components/ui/bread-crumbs/bread-crumbs';
 import { BreadCrumbItem } from '@/app/_components/ui/bread-crumbs/bread-crumbs.types';
 
@@ -13,6 +13,7 @@ export default async function BlogDetailsPage({ params }: { params: { slug: stri
     console.log("BLOG DATA:", blog); // برای تست
 
     if (!blog) return notFound();
+    const blogAny = blog as any;
 
     const breadcrumbItems: BreadCrumbItem[] = [
         { label: "Home", url: "/" },
@@ -23,7 +24,10 @@ export default async function BlogDetailsPage({ params }: { params: { slug: stri
     return (
         <>
             <BreadCrumbs items={breadcrumbItems} />
-            <BlogDetailsComponent {...blog} />
+            <BlogDetailsComponent
+                {...blogAny}
+                content={blogAny.content}
+            />
         </>
     );
 }
