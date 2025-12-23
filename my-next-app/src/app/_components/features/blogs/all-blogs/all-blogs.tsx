@@ -18,7 +18,7 @@ const AllBlogs: React.FC<AllBlogsProps> = ({ visibleBlogs }) => {
                 <div className="mt-9 flex w-full flex-wrap justify-center gap-5">
                     {visibleBlogs.map((blog) => (
                         <BlogCard
-                            key={blog.id}
+                          key={`${blog.id}`}
                             id={blog.id}
                             srcImage={blog.srcImage}
                             label={blog.label}
@@ -26,6 +26,7 @@ const AllBlogs: React.FC<AllBlogsProps> = ({ visibleBlogs }) => {
                             date={blog.date}
                             visit_number={blog.visit_number}
                             slug={blog.slug}
+                            content={blog.content}
                         />
                     ))}
                 </div>

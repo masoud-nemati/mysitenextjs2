@@ -209,7 +209,9 @@ const config: Config = {
     function ({ addVariant }: { addVariant: (name: string, value: string) => void }) {
       addVariant('child', '& > *');
       addVariant('child-hover', '& > *:hover');
+    
     }
+    
   ],
 };
 export default config;

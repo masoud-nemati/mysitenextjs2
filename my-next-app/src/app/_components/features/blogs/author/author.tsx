@@ -7,7 +7,7 @@ const Author: React.FC<AuthorProps> = ({
     authorName,
     authorPostCount,
     authorStartDate,
-    authorProfileImage="",
+    authorProfileImage="/images/default-avatar.jpg",
     authorBio,
     variant = "default"
 }) => {

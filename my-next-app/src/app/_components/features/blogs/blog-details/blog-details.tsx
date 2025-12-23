@@ -1,27 +1,29 @@
 import Image from "next/image";
+import Link from "next/link";
+import { IconArrowLeft } from "@/app/_components/ui/icons/icons";
 import { FC } from "react";
 import { IBlogDetailsProps } from "./blog-details.types";
 import Tag from "@/app/_components/ui/tag/tag";
 import Author from "../author/author";
 
 const BlogDetailsComponent: FC<IBlogDetailsProps> = (props) => {
-  const { srcImage, label, title, content, readingTime, author } = props;
+  const { srcImage, label, title, content, author } = props;
 
   return (
     <>
       {/* blog title & details */}
-      <section className="containerD my-4">
+      <section className="containerD my-6 md:my-10">
         <div>
           <Tag tag_title={label} />
 
-          {/* blog title */}
-          <h1 className="mb-6 mt-[15px] text-3xl font-bold leading-[41px] text-[#425a8b] text-right">
+          {/* blog title - responsive font size */}
+          <h1 className="mb-4 pr-5 md:mb-6 mt-3 md:mt-4 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-[#425a8b] text-right">
             {title}
           </h1>
 
-          {/* blog author info (top) */}
+          {/* blog author info (top) - فقط روی دسکتاپ نمایش بده */}
           {author && (
-            <div className="flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-4 mt-6">
               <Author
                 authorName={author.authorName}
                 authorPostCount={author.authorPostCount}
@@ -35,42 +37,76 @@ const BlogDetailsComponent: FC<IBlogDetailsProps> = (props) => {
         </div>
       </section>
 
-      {/* blog image */}
-      <section className="containerD my-5">
-        <div className="relative w-full h-[400px] rounded-xl overflow-hidden">
+      {/* blog image - کاملاً responsive */}
+      <section className="containerD my-6 md:my-8">
+        <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-xl overflow-hidden shadow-lg">
           <Image
             src={srcImage}
             alt={title}
             fill
             className="object-cover"
             priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
           />
         </div>
       </section>
 
       {/* blog content */}
-      <section dir="rtl" className="containerD my-5 py-4 text-right">
+      <section dir="rtl" className="containerD my-8 py-4 text-right">
         <div
-          className="prose prose-slate lg:prose-lg font-sans text-[#212529] leading-8"
-          dangerouslySetInnerHTML={{ __html: content }}
+          className="
+      prose prose-slate 
+      max-w-none 
+      prose-base md:prose-lg lg:prose-xl 
+      font-sans text-[#212529] leading-8
+      prose-headings:text-[#425a8b] prose-headings:font-bold
+      prose-p:my-4 md:prose-p:my-6
+      prose-img:rounded-lg prose-img:mx-auto
+      px-4 sm:px-6 md:px-8 lg:px-12 xl:px-0   /* ← این خط جادویی است! */
+      mx-auto                                   /* اختیاری: وسط‌چین کردن در صفحه‌های بزرگ */
+    "
+          dangerouslySetInnerHTML={{ __html: content ?? ``}}
         />
       </section>
+      <div className="containerD my-8 border-t-4 border-secondary-300" />
 
-      <div className="containerD my-5 border border-b-4 border-secondary-300" />
-
-      {/* blog author info (bottom) */}
+      {/* blog author info (bottom) - روی موبایل هم نمایش بده، روی دسکتاپ کامل‌تر */}
       {author && (
-        <section className="containerD">
+        <section className="containerD pb-8">
           <Author
             authorName={author.authorName}
             authorPostCount={author.authorPostCount}
             authorStartDate={author.authorStartDate}
             authorProfileImage={author.authorProfileImage}
             authorBio={author.authorBio}
-            variant="default"
+            variant={author ? "default" : "minimal"} // یا می‌تونی variant جداگانه برای موبایل تعریف کنی
           />
         </section>
       )}
+
+      <section className="containerD py-8 md:py-12">
+        <div className="flex justify-start">
+          <Link
+            href="/blog" // اگر مسیر لیست مقالاتت چیز دیگه‌ای هست، اینجا تغییر بده مثلاً /articles یا /
+            className="
+              inline-flex items-center gap-3
+              px-6 py-3
+              text-sm md:text-base font-medium
+              text-[#425a8b]
+              bg-gray-100 hover:bg-gray-200
+              rounded-xl
+              transition-all duration-200
+              border border-gray-300
+              focus:outline-none focus:ring-2 focus:ring-[#425a8b] focus:ring-offset-2
+            "
+          >
+            <IconArrowLeft className="w-5 h-5" />
+            <span></span>
+          </Link>
+        </div>
+      </section>
+
+
     </>
   );
 };

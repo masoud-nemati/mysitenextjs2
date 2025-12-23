@@ -1,7 +1,7 @@
 "use client";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-import ImageComponent from "@/app/_components/section/image/ImageComponent";
+import Image from "next/image";
 import { Input } from "@/app/_components/ui/input";
 
 export default function LoginForm() {
@@ -10,45 +10,53 @@ export default function LoginForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("User email (optional):", email); // فقط برای نمایش، اختیاری
-    router.push("/"); // مسیر صفحه اصلی
+    router.push("/");
   };
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen flex items-center justify-center shadow-fuchsia-600">
-      <div className="flex items-center justify-center w-[1000px] h-[600px] mx-auto bg-gray-100 mt-8 rounded-2xl shadow-2xl">
-        <div className="relative w-full h-full bg-gray-900 rounded-2xl flex md:flex-row flex-col overflow-hidden box-border">
-          {/* ستون فرم */}
-          <div className="flex-1 flex flex-col justify-center px-8 py-10">
-            <h1 className="text-3xl font-bold mb-4 text-white">Welcome my sait </h1>
-            <h2 className="text-3xl font-bold mb-4 text-white">Masoud Nemati </h2>
-            <p className="mb-6 text-gray-300">Sign in with your email to continue (optional)</p>
+    <div className="min-h-screen flex items-center justify-center bg-black p-4">
+      <div className="relative w-full max-w-6xl h-[700px] md:h-[800px] rounded-3xl overflow-hidden shadow-2xl">
+        {/* عکس پس‌زمینه — واضح‌تر (opacity بالاتر) */}
+        <Image
+          src="/images/img2/imglogin2.jpg"
+          alt="Masoud Nemati"
+          fill
+          className="object-cover object-center"
+          priority
+          sizes="100vw"
+          style={{ opacity: 0.65 }} // ← اینجا واضح‌تر شده (از 0.4 به 0.65)
+        />
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md">
-              <Input
-               placeholder="Enter your email (optional)..."
-                helperText="We'll never share your email"
-                 variant="info"
-                onChange={(e: { target: { value: SetStateAction<string>; }; }) => setEmail(e.target.value)}
-                // required حذف شد
-              />
-              <button
-                type="submit"
-                className="bg-pink-600 hover:bg-pink-700 text-white w-80 py-2 rounded-sm font-semibold"
-              >
-                vizit
-              </button>
-            </form>
-          </div>
+        {/* لایه گرادیان ملایم برای خوانایی متن — فقط از چپ (جایی که متن هست) تیره‌تر */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-10"></div>
 
-          {/* ستون عکس */}
-          <div className="flex-1 flex items-center justify-center bg-gray-900 p-2 md:p-6">
-            <ImageComponent
-              src="/images/imglogin4.png"
-              alt="Login"
-              className="w-[400px] h-[600px] md:w-[600px] md:h-[600px] object-cover rounded-md"
+        {/* محتوای اصلی — وسط چپ، خوانا و جذاب */}
+        <div className="relative z-20 flex flex-col justify-center items-start h-full px-10 md:px-20 lg:px-40 text-white">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-4 tracking-tight">
+            Welcome to my site
+          </h1>
+          <h2 className="text-4xl md:text-6xl font-bold text-pink-500 mb-10 drop-shadow-2xl">
+            Masoud Nemati
+          </h2>
+          <p className="text-lg md:text-xl text-gray-200 mb-12 max-w-md">
+            Sign in with your email to continue <span className="text-gray-400">(optional)</span>
+          </p>
+
+          <form onSubmit={handleSubmit} className="w-full max-w-md space-y-8">
+            <Input
+              placeholder="Enter your email (optional)..."
+              helperText="We'll never share your email"
+              variant="info"
+              onChange={(e) => setEmail(e.target.value)}
+              className="bg-white/15 backdrop-blur-md border-white/30 text-white placeholder-gray-400 focus:border-pink-500 focus:ring-pink-500 text-lg py-6"
             />
-          </div>
+            <button
+              type="submit"
+              className="w-full bg-gradient-to-r from-pink-600 to-pink-700 hover:from-pink-700 hover:to-pink-800 text-white py-6 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-pink-600/60 transition-all duration-300 transform hover:scale-105"
+            >
+              Visit Site
+            </button>
+          </form>
         </div>
       </div>
     </div>

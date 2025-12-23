@@ -26,6 +26,7 @@ const LatestBlogs = () => {
                         date={blog.date}
                         visit_number={blog.visit_number}
                         slug={blog.slug}
+                        content=""
                     />
                 ))}
             </div>
