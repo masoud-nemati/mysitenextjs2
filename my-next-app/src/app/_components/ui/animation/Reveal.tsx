@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
+const isStaticSection = true;
 export default function Reveal({
   children,
   delay = 0,

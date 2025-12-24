@@ -34,19 +34,23 @@ export default function Home() {
 
   return (
     <section className="container-fluid mx-auto flex flex-col items-center space-y-[50px] py-16">
- 
+
       <Reveal>
-        <h1
-          className="
-      text-2xl sm:text-3xl md:text-4xl
-      font-semibold
-      tracking-tight
-      text-red-400
-      mb-2
-    "
-        >
-          Welcome to my site
-        </h1>
+       <h1
+  className="
+    text-xl
+    sm:text-2xl
+    md:text-3xl
+    lg:text-4xl
+    font-semibold
+    tracking-tight
+    text-blue-900
+    mb-3
+  "
+>
+  Welcome to my site
+</h1>
+
       </Reveal>
 
 

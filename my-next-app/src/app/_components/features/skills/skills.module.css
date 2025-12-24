@@ -1,88 +1,50 @@
-/* skills.module.css */
+@reference "tailwindcss";
+
 .skillsPage {
-  padding: 2rem;
+  @apply min-h-screen p-8;
 }
 
 .h2skill {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 2.5rem;
-
-  color: #2563eb;
-  letter-spacing: 0.05em;
-  position: relative;
+  @apply relative mb-14 text-center text-4xl font-bold tracking-tight;
 }
 
 .h2skill::after {
   content: "";
-  display: block;
-  width: 150px;         
-  height: 2px;
-  background-color: #2563eb;
-  margin: 12px auto 0;   
-  border-radius: 999px;
+  @apply mx-auto mt-4 block h-1 w-24 rounded-full;
 }
 
 .sectionTitle {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-
-  color: #393766;       
-  position: relative;
+  @apply relative mb-8 text-2xl font-semibold;
 }
 
 .sectionTitle::after {
   content: "";
-  display: block;
-  width: 90%;
-  height: 3px;
-  background-color: #a36e17; 
-  margin-top: 8px;
-  border-radius: 999px;
+  @apply mt-3 block h-[3px] w-20 rounded-full;
 }
-
-
-
 
 .skillsList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2.5rem;     
-  justify-content: center;
+  @apply flex flex-wrap justify-center gap-10;
 }
-
 
 .skillCard {
-  background: #cebcbc;
-  padding: 2rem;          
-  border-radius: 16px;
-
-  width: 360px;          
-  text-align: center;
-
-  display: flex;          
-  flex-direction: column;
-  align-items: center;    
-  gap: 0.8rem;
+  @apply relative flex w-[360px] flex-col items-center gap-4
+         rounded-2xl border p-8 text-center
+         transition-all duration-300
+         hover:-translate-y-2;
 }
 
-
 .skillLogo {
-  margin-bottom: 0.5rem;
-  
+  @apply mb-2 flex h-14 w-14 items-center justify-center rounded-xl;
 }
 
 .skillName {
-  display: block;
-  font-weight: bold;
+  @apply text-lg font-semibold;
 }
 
 .meter {
-  width: 100%;
+  @apply mt-2 h-2 w-full overflow-hidden rounded-full;
 }
 
 .skillLevel {
-  font-size: 0.9rem;
+  @apply mt-2 text-sm;
 }

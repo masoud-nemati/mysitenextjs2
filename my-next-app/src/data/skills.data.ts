@@ -6,6 +6,7 @@ export const programmingSkills = [
   { name: "Kotlin", level: 30, logo: "/logo/kotlin-logo.png" },
   { name: "Github", level: 50, logo: "/logo/github2.png" },
   { name: "Editing", level: 70, logo: "/logo/editingword.jpeg" },
+  { name: "Next.js", level: 45, logo: "/logo/nextjs1.jpg" },
 ];
 
 export const industrialSkills = [
