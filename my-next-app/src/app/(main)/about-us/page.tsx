@@ -1,9 +1,5 @@
 import AboutSection from "@/app/_components/features/sections/AboutSection";
 
 export default function AboutPage() {
-  return (
-    <main>
-      <AboutSection />
-    </main>
-  );
+  return <AboutSection />;
 }

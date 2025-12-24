@@ -27,7 +27,7 @@ export default function LoginForm() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-top"
           style={{ opacity: 0.65 }}
         />
 
@@ -42,15 +42,15 @@ export default function LoginForm() {
     px-6 sm:px-10 md:px-16 lg:px-24
     text-white
   ">
-            <Reveal>
+            {/* <Reveal>
               <h1 className="text-xl sm:text-2xl font-semibold mb-1">
                 Welcome
               </h1>
-            </Reveal>
+            </Reveal> */}
 
 
             <Reveal>
-              <h2 className="text-2xl sm:text-3xl font-bold text-pink-500 mb-5">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white-500 mb-5">
                 Masoud Nemati
               </h2>
             </Reveal>
@@ -68,29 +68,37 @@ export default function LoginForm() {
                 helperText="We'll never share your email"
                 variant="info"
                 onChange={(e) => setEmail(e.target.value)}
-                className="
+              className="
     w-full
     bg-white/10
     backdrop-blur-md
     border border-white/20
     text-white placeholder-gray-400
-    focus:border-pink-500 focus:ring-pink-500
-    text-sm py-3.5
+    rounded-xl
+    px-4
+    py-3.5
+    text-sm
+    focus:outline-none
+    focus:border-blue-500
+    focus:ring-1 focus:ring-blue-500
+    transition-colors duration-300
   "
               />
 
               <button
                 type="submit"
-                className="
+          className="
     w-full
-    bg-pink-600 hover:bg-pink-700
+    bg-blue-600 hover:bg-blue-700
     text-white
     py-3.5
     rounded-xl
     font-medium
     text-sm
-    shadow-lg hover:shadow-pink-600/40
+    shadow-lg shadow-blue-600/40
+    hover:shadow-xl hover:shadow-blue-500/50
     transition-all duration-300
+    transform hover:-translate-y-0.5
   "
               >
                 Visit Site

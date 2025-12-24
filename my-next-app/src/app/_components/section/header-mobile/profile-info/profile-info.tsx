@@ -1,78 +1,79 @@
+// ProfileInfo.tsx
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { User, ShoppingCart, Heart, Settings, Package } from 'lucide-react'
 
 const ProfileInfo = () => {
     return (
-        <div className="flex flex-col gap-4 border-b border-shop-gray-border py-4">
-            {/* user info */}
-            <div className="avatar">
+        <div className="flex flex-col gap-5 border-b border-gray-700 pb-5">
+            {/* User Info */}
+            <div className="flex items-center gap-4">
                 <Image
-                    src={'/images/other-images/default-avatar.jpg'}
-                    alt=""
-                    height={50}
-                    width={50}
-                    className="rounded-full"
+                    src="/images/other-images/default-avatar.jpg"
+                    alt="User Avatar"
+                    width={60}
+                    height={60}
+                    className="rounded-full border-2 border-blue-500 shadow-md"
                 />
-                <div className="text-start">
-                    <h6 className="text-sm font-semibold text-shop-gray-500">
-                        Hello
-                        <span className="text-brand"> Steven !</span>
+                <div>
+                    <h6 className="text-white text-sm font-semibold">
+                        Hello <span className="text-blue-400">Steven!</span>
                     </h6>
-                    <p className="text-xxs text-shop-gray-900">
+                    <p className="text-gray-400 text-xs">
                         You have 3 new messages
                     </p>
                 </div>
             </div>
 
-            {/* property */}
-            <ul className="grid grid-cols-2 grid-rows-3 gap-3 text-start">
+            {/* User Links */}
+            <ul className="grid grid-cols-2 gap-3 text-sm">
                 <li>
                     <Link
-                        href="user-panel.html"
-                        className="text-sm text-shop-gray-400"
+                        href="/user-panel"
+                        className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
                     >
-                        My Account
+                        <User size={16} /> My Account
                     </Link>
                 </li>
                 <li>
                     <Link
-                        href="user-panel.html"
-                        className="text-sm text-shop-gray-400"
+                        href="/order-tracking"
+                        className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
                     >
-                        Order Tracking
+                        <Package size={16} /> Order Tracking
                     </Link>
                 </li>
                 <li>
                     <Link
-                        href="user-panel.html"
-                        className="text-sm text-shop-gray-400"
+                        href="/orders"
+                        className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
                     >
-                        My Orders
+                        <ShoppingCart size={16} /> My Orders
                     </Link>
                 </li>
                 <li>
                     <Link
-                        href="user-panel.html"
-                        className="text-sm text-shop-gray-400"
+                        href="/wishlist"
+                        className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
                     >
-                        My Wishlist
+                        <Heart size={16} /> My Wishlist
                     </Link>
                 </li>
                 <li>
                     <Link
-                        href="user-panel.html"
-                        className="text-sm text-shop-gray-400"
+                        href="/settings"
+                        className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
                     >
-                        Setting
+                        <Settings size={16} /> Settings
                     </Link>
                 </li>
                 <li>
                     <Link
-                        href="login.html"
-                        className="text-sm text-shop-gray-400"
+                        href="/login"
+                        className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
                     >
-                        Sign out
+                        
                     </Link>
                 </li>
             </ul>
