@@ -197,6 +197,7 @@ export const colors = {
 };
 
 const config: Config = {
+  darkMode: "class",
   content: ["./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     fontSize: fontSize,

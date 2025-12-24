@@ -5,6 +5,8 @@ import LatestBlogs from "@/app/_components/features/blogs/latest-blogs/latest-bl
 import ImageSlider from "@/app/_components/section/ImageSlider/ImageSlider";
 import AboutSection from "@/app/_components/features/sections/AboutSection";
 import { homeSliderImages } from "@/data/sliders";
+import Reveal from "@/app/_components/ui/animation/Reveal"
+import ThemeToggle from "@/app/_components/ui/drak/light/ThemeToggle";
 
 
 
@@ -32,30 +34,54 @@ export default function Home() {
 
   return (
     <section className="container-fluid mx-auto flex flex-col items-center space-y-[50px] py-16">
-      <h1>welcome my site</h1>
+ 
+      <Reveal>
+        <h1
+          className="
+      text-2xl sm:text-3xl md:text-4xl
+      font-semibold
+      tracking-tight
+      text-red-400
+      mb-2
+    "
+        >
+          Welcome to my site
+        </h1>
+      </Reveal>
 
-      <section className="containerD">
-        <ImageSlider
-          images={homeSliderImages}
-          height={500}
-          maxWidth="max-w-6xl"
-        />
-      </section>
 
-      <section className="containerD">
-        <AttributeSection />
-      </section>
+      <Reveal delay={0.1}>
+        <section className="containerD">
+          <ImageSlider
+            images={homeSliderImages}
+            height={500}
+            maxWidth="max-w-6xl"
+          />
+        </section>
+      </Reveal>
 
-      <main className="containerD">
-        <SmallBanner data={smallBannerData} />
-      </main>
-      <section className="containerD">
-        <LatestBlogs />
-      </section>
+      <Reveal delay={0.2}>
+        <section className="containerD">
+          <AttributeSection />
+        </section>
+      </Reveal>
+      <Reveal delay={0.3}>
+        <main className="containerD">
+          <SmallBanner data={smallBannerData} />
+        </main>
+      </Reveal>
 
-      <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-        <AboutSection />
-      </main>
+      <Reveal delay={0.4}>
+        <section className="containerD">
+          <LatestBlogs />
+        </section>
+      </Reveal>
+
+      <Reveal delay={0.5}>
+        <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+          <AboutSection />
+        </main>
+      </Reveal>
 
 
 
