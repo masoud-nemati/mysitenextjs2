@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Input } from "@/app/_components/ui/input";
 import Reveal from "@/app/_components/ui/animation/Reveal";
+import { Button } from "@/app/_components/ui/button";
 
 
 export default function LoginForm() {
@@ -65,45 +66,15 @@ export default function LoginForm() {
             <form onSubmit={handleSubmit} className="w-full space-y-5">
               <Input
                 placeholder="Email (optional)"
-                helperText="We'll never share your email"
                 variant="info"
                 onChange={(e) => setEmail(e.target.value)}
-              className="
-    w-full
-    bg-white/10
-    backdrop-blur-md
-    border border-white/20
-    text-white placeholder-gray-400
-    rounded-xl
-    px-4
-    py-3.5
-    text-sm
-    focus:outline-none
-    focus:border-blue-500
-    focus:ring-1 focus:ring-blue-500
-    transition-colors duration-300
-  "
               />
 
-              <button
-                type="submit"
-          className="
-    w-full
-    bg-blue-600 hover:bg-blue-700
-    text-white
-    py-3.5
-    rounded-xl
-    font-medium
-    text-sm
-    shadow-lg shadow-blue-600/40
-    hover:shadow-xl hover:shadow-blue-500/50
-    transition-all duration-300
-    transform hover:-translate-y-0.5
-  "
-              >
-                Visit Site
-              </button>
+              <Button variant="primary" compSize="md">vizit site</Button>
+
+
             </form>
+
 
 
           </div>

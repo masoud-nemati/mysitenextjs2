@@ -14,7 +14,7 @@
   display: block;
   height: 4px;
   width: 100%;
-  background: linear-gradient(90deg, #60a5fa, #38bdf8);
+  background: linear-gradient(90deg, #4e85c9, #38bdf8);
   border-radius: 999px;
   margin-bottom: 20px;
 }
@@ -65,7 +65,7 @@
   padding: 12px;
   border-radius: 14px;
   border: none;
-  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  background: linear-gradient(135deg, #355b8b, #033c97);
   color: #ffffff;
   font-weight: 600;
   font-size: 0.95rem;

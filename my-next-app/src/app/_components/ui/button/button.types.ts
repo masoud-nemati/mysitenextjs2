@@ -1,17 +1,18 @@
 import { ButtonHTMLAttributes } from "react";
-import { BaseComponent } from "../base-component.types";
+import { BaseComponent } from "@/app/_components/base.component.type";
 
-
-export type ButtonState="default" | "link" | "outline";
-export type ButtonShape = "default" | "wide" | "square" | "pill" | "full" ;
+export type ButtonState = "primary" |"default" | "link" | "outline";
+export type ButtonShape = "default" | "wide" | "square" | "pill" | "full";
+export type ButtonSize = "sm" | "md" | "lg"| "xs"| "xl";
 
 export type ButtonProps =
-    ButtonHTMLAttributes<HTMLButtonElement> &
-    BaseComponent &
-    {
-        shape?: ButtonShape,
-        isLoading? : boolean,
-        loadingText? : string,
-        animIcon? :boolean,
-        state?:ButtonState
-    }
+  ButtonHTMLAttributes<HTMLButtonElement> &
+  BaseComponent & {
+    compSize?: ButtonSize;   // ✅ اضافه شد
+    shape?: ButtonShape;
+    state?: ButtonState;
+
+    isLoading?: boolean;
+    loadingText?: string;
+    animIcon?: boolean;
+  };

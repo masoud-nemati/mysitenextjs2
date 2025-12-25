@@ -1,21 +1,35 @@
-// src/app/skills/page.tsx
 import SkillCard from "@/app/_components/features/skills/skillcard";
-import styles from "@/app/_components/features/skills/skills.module.css"
+import BreadCrumbs from "@/app/_components/ui/bread-crumbs/bread-crumbs";
+import styles from "@/app/_components/features/skills/skills.module.css";
+import type { BreadCrumbItem } from "@/app/_components/ui/bread-crumbs/bread-crumbs.types";
+
 
 import {
   programmingSkills,
   industrialSkills,
 } from "@/data/skills.data";
 
-
+const breadcrumbItems: BreadCrumbItem[] = [
+  { label: "Home", url: "/" },
+  { label: "Skills", url: "/skills" },
+];
 
 export default function SkillsPage() {
   return (
+
+    <>
+        <section>
+        <BreadCrumbs items={breadcrumbItems} />
+      </section>
     <div className={styles.skillsPage}>
+      
+      {/* Breadcrumbs */}
+      
+
       <h2 className={styles.h2skill}>My Skills</h2>
 
       <section className={styles.skillsCategory}>
-       <h3 className={styles.sectionTitle}>Programming Skills</h3>
+        <h3 className={styles.sectionTitle}>Programming Skills</h3>
         <div className={styles.skillsList}>
           {programmingSkills.map((skill) => (
             <SkillCard key={skill.name} {...skill} />
@@ -24,7 +38,7 @@ export default function SkillsPage() {
       </section>
 
       <section className={styles.skillsCategory}>
-     <h3 className={styles.sectionTitle}>Industrial Skills</h3>
+        <h3 className={styles.sectionTitle}>Industrial Skills</h3>
         <div className={styles.skillsList}>
           {industrialSkills.map((skill) => (
             <SkillCard key={skill.name} {...skill} />
@@ -32,5 +46,6 @@ export default function SkillsPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

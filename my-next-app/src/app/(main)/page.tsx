@@ -6,6 +6,7 @@ import ImageSlider from "@/app/_components/section/ImageSlider/ImageSlider";
 import AboutSection from "@/app/_components/features/sections/AboutSection";
 import { homeSliderImages } from "@/data/sliders";
 import Reveal from "@/app/_components/ui/animation/Reveal"
+import LatestSkills from "../_components/features/skills/latestskills/LatestSkills";
 import ThemeToggle from "@/app/_components/ui/drak/light/ThemeToggle";
 
 
@@ -33,11 +34,11 @@ import { redirect } from "next/navigation";
 export default function Home() {
 
   return (
-    <section className="container-fluid mx-auto flex flex-col items-center space-y-[50px] py-16">
+    <section className="container-fluid mx-auto flex flex-col items-center space-y-[50px] py-16 bg-gray-400">
 
       <Reveal>
-       <h1
-  className="
+        <h1
+          className="
     text-xl
     sm:text-2xl
     md:text-3xl
@@ -47,9 +48,9 @@ export default function Home() {
     text-blue-900
     mb-3
   "
->
-  Welcome to my site
-</h1>
+        >
+          Welcome to my site
+        </h1>
 
       </Reveal>
 
@@ -82,6 +83,12 @@ export default function Home() {
       </Reveal>
 
       <Reveal delay={0.5}>
+        <section className="containerD">
+          <LatestSkills />
+        </section>
+      </Reveal>
+
+      <Reveal delay={0.6}>
         <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
           <AboutSection />
         </main>
