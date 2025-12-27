@@ -52,22 +52,16 @@ const BlogDetailsComponent: FC<IBlogDetailsProps> = (props) => {
       </section>
 
       {/* blog content */}
-      <section dir="rtl" className="containerD my-8 py-4 text-right">
-        <div
-          className="
-      prose prose-slate 
-      max-w-none 
-      prose-base md:prose-lg lg:prose-xl 
-      font-sans text-[#212529] leading-8
-      prose-headings:text-[#425a8b] prose-headings:font-bold
-      prose-p:my-4 md:prose-p:my-6
-      prose-img:rounded-lg prose-img:mx-auto
-      px-4 sm:px-6 md:px-8 lg:px-12 xl:px-0   /* ← این خط جادویی است! */
-      mx-auto                                   /* اختیاری: وسط‌چین کردن در صفحه‌های بزرگ */
-    "
-          dangerouslySetInnerHTML={{ __html: content ?? ``}}
+<section dir="rtl" className="containerD my-12">
+        <article
+          className="blog-content"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: content ?? "" }}
         />
       </section>
+
+
+
       <div className="containerD my-8 border-t-4 border-secondary-300" />
 
       {/* blog author info (bottom) - روی موبایل هم نمایش بده، روی دسکتاپ کامل‌تر */}

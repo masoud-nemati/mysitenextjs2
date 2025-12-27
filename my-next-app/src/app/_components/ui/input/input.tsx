@@ -3,10 +3,7 @@ import React, { forwardRef, useState } from "react";
 import { InputProps } from "./input.type";
 import classNames from "classnames";
 
-export const Input: React.FC<InputProps> = forwardRef<
-  HTMLInputElement,
-  InputProps
->(
+export const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {
       compsize,
@@ -14,6 +11,7 @@ export const Input: React.FC<InputProps> = forwardRef<
       variant,
       shape,
       isdisabled = false,
+      isFullWidth,
       type = "text",
       label = "",
       helperText = "",
@@ -24,71 +22,33 @@ export const Input: React.FC<InputProps> = forwardRef<
       ...res
     },
     ref
-  ): React.JSX.Element => {
-    const labelClasses = classNames({ "input--label": label });
+  ) => {
     const inputClasses = classNames(
       "input",
       className,
+      { "w-full": isFullWidth },
       { [`input--${variant}`]: variant },
       { [`input--${color}`]: color },
-      { [`input--${compsize}`]: compsize},
+      { [`input--${compsize}`]: compsize },
       { [`input--${shape}`]: shape },
       { "input--icon": byIcon }
     );
-    const iconhelperTextClassees = classNames({ "input--iconhelpertext": helperText });
-    const helperTextClassees = classNames({ "input--helpertext": helperText });
+
     return (
-      <>
-        <div className="flex items-center">
-        
-        
-          {label && (
-            <label htmlFor={id} className={labelClasses}>
-              {label}
-            </label>
-          )}
+      <div className="flex items-center">
+        {label && <label htmlFor={id} className="input--label">{label}</label>}
 
+        <input
+          ref={ref}
+          id={id}
+          type={type}
+          disabled={isdisabled}
+          className={inputClasses}
+          {...res}
+        />
 
-
-          {byIcon ? (
-            <div className="relative">
-              <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-                {icon}
-              </div>
-              <input
-                ref={ref}
-                id={id}
-                type={type}
-                disabled={isdisabled}
-                className={inputClasses}
-                {...res}
-              />
-            </div>
-          ) : (
-            <input
-              ref={ref}
-              id={id}
-              type={type}
-              disabled={isdisabled}
-              className={inputClasses}
-              {...res}
-            />
-          )}
-
-
-
-          {helperText && (
-            <div className="group">
-              <span className={iconhelperTextClassees}>!</span>
-              <span className={helperTextClassees}>
-                {helperText}
-              </span>
-            </div>
-          )}
-
-          
-        </div>
-      </>
+        {helperText && <span className="input--helpertext">{helperText}</span>}
+      </div>
     );
   }
 );

@@ -27,10 +27,11 @@ export interface IBlogCardProps {
   date: string;
   visit_number: number;
   slug: string;
+    content?: string; 
 }
 
 // تایپ کامل برای بلاگ‌هایی که صفحه جزئیات دارن (با content و author اختیاری)
 export interface IBlogDetailsProps extends IBlogCardProps {
-  content?: string;     // اختیاری، چون فقط بعضی بلاگ‌ها دارن
+    // اختیاری، چون فقط بعضی بلاگ‌ها دارن
   author?: AuthorProps; // اختیاری
 }
