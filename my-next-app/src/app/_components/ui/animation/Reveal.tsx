@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-const isStaticSection = true;
+
 export default function Reveal({
   children,
   delay = 0,
@@ -21,7 +21,11 @@ export default function Reveal({
         y: 0,
         scale: 1,
       }}
-     viewport={{ once: false, margin: "-100px" }}
+      viewport={{
+        once: false,        // ← اینجا تغییر اصلی: حالا هر بار تکرار میشه
+        margin: "-100px",   // کمی زودتر انیمیشن شروع بشه
+        amount: "some",     // اختیاری: بهتر کار می‌کنه (به جای all یا عدد)
+      }}
       transition={{
         duration: 0.9,
         delay,

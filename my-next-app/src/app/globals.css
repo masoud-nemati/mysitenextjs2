@@ -14,6 +14,20 @@
     }
 }
 
+:root {
+  --bg: #ffffff;
+  --fg: #0f172a;
+  --muted: #475569;
+}
+
+.dark {
+  --bg: #020617;
+  --fg: #e5e7eb;
+  --muted: #94a3b8;
+}
+
+
+
 @font-face {
   font-family: "Vazirmatn";
   src: url("/fonts/vazirmatn/Vazirmatn-Regular.woff2") format("woff2");
@@ -47,5 +61,16 @@
 }
 html {
   font-family: "Vazirmatn", sans-serif;
+}
+
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 47.4% 11.2%;
+}
+
+.dark {
+  --background: 222.2 47.4% 11.2%;
+  --foreground: 210 40% 98%;
 }
 

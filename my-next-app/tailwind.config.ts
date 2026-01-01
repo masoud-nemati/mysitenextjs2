@@ -125,6 +125,13 @@ const config: Config = {
     extend: {
       colors: colors,
 
+       background: {
+      DEFAULT: "hsl(var(--background))",
+    },
+    foreground: {
+      DEFAULT: "hsl(var(--foreground))",
+    },
+
       // ===== تنظیمات Tailwind Typography سفارشی =====
       typography: (theme: any) => ({
         DEFAULT: {
