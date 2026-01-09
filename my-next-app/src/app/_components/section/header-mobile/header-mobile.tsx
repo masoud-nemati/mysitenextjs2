@@ -14,7 +14,7 @@ export const HeaderMobile: React.FC = () => {
             <div className="flex justify-between items-center border-b border-gray-700 pb-4 mb-4">
                 <Link href="/" className="w-32">
                     <Image
-                        src="logo/logo.svg"
+                        src="/logo/masoudnemati.png"
                         alt="logo"
                         width={111}
                         height={37}
@@ -28,7 +28,7 @@ export const HeaderMobile: React.FC = () => {
             <MenuItem />
 
             {/* Profile */}
-            <ProfileInfo />
+            {/* <ProfileInfo /> */}
 
             {/* Mobile Banner */}
             <MobileBaner />

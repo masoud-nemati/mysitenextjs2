@@ -1,16 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
+
+
+
 import {
   IconFacebookGray,
   IconInstagramGray,
   IconLinkedinGray,
-  IconTwitterGray,
+ 
 } from "@/app/_components/ui/icons/icons";
 import ScrollToTop from "@/app/_components/ui/scroll-to-top/scroll-to-top";
 
 export const Footer: React.FC = () => {
   return (
-  <footer className="relative bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700 text-white">
+    <footer className="relative bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700 text-white">
 
       {/* Scroll Button (Right Side) */}
       <div className="fixed bottom-8 right-6 z-50">
@@ -18,7 +21,7 @@ export const Footer: React.FC = () => {
       </div>
 
       <div className="container-fluid relative flex flex-wrap justify-between gap-4 py-20">
-        
+
         {/* Contact */}
         <div>
           <h4 className="mb-[30px] text-2xl font-bold text-shop-gray-1000">
@@ -29,21 +32,21 @@ export const Footer: React.FC = () => {
             <li className="flex items-center">
               <div className="text-md text-shop-gray-900">
                 <strong className="font-bold">Address:</strong>
-                Tehran - Ayatollah Kashani - Abazar Blvd.
+                turky    .....
               </div>
             </li>
 
             <li>
               <div className="text-md text-shop-gray-900">
                 <strong className="font-bold">Phone:</strong>
-                (+98) 123-456-789
+                (+90) 531-384-5662
               </div>
             </li>
 
             <li>
               <div className="text-md text-shop-gray-900">
                 <strong className="font-bold">E-mail:</strong>
-                info@darsman.com
+                masuodn8@gmail.com
               </div>
             </li>
 
@@ -58,7 +61,7 @@ export const Footer: React.FC = () => {
               <div className="flex gap-5 text-md">
                 <IconFacebookGray width="32" height="32" viewBox="0 0 32 32" fill="#425a8b" stroke="#fff" />
                 <IconInstagramGray width="32" height="32" viewBox="0 0 32 32" fill="#425a8b" stroke="#fff" />
-                <IconTwitterGray width="32" height="32" viewBox="0 0 32 32" fill="#425a8b" stroke="#fff" />
+               
                 <IconLinkedinGray width="32" height="32" viewBox="0 0 32 32" fill="#425a8b" stroke="#fff" />
               </div>
             </li>
@@ -68,63 +71,60 @@ export const Footer: React.FC = () => {
         {/* Footer Menu 1 */}
         <div>
           <h4 className="mb-[30px] text-2xl font-bold text-shop-gray-1000">
-            Footer menu
+            Pages
           </h4>
 
           <ul className="space-y-5">
-            <li className="text-md text-shop-gray-900">
-              <Link href="#" className="flex items-end gap-0.5">
-                Useful Links
-              </Link>
-            </li>
-            <li className="text-md text-shop-gray-900"><a href="#">Useful Links</a></li>
-            <li className="text-md text-shop-gray-900"><a href="#">Useful Links</a></li>
-            <li className="text-md text-shop-gray-900"><a href="#">Useful Links</a></li>
-            <li className="text-md text-shop-gray-900"><a href="#">Useful Links</a></li>
+
+            <li><Link href="/" className="text-md text-shop-gray-900">Home</Link></li>
+            <li><Link href="/about" className="text-md text-shop-gray-900">About Me</Link></li>
+            <li><Link href="/projects" className="text-md text-shop-gray-900">Projects</Link></li>
+            <li><Link href="/blog" className="text-md text-shop-gray-900">Blog</Link></li>
+            <li><Link href="/contact" className="text-md text-shop-gray-900">Contact</Link></li>
           </ul>
         </div>
 
         {/* Footer Menu 2 */}
         <div>
           <h4 className="mb-[30px] text-2xl font-bold text-shop-gray-1000">
-            Footer menu
+            About
           </h4>
 
           <ul className="space-y-5">
-            <li className="text-md text-shop-gray-900">
-              <Link href="#" className="flex items-end gap-0.5">
-                Useful Links
-              </Link>
-            </li>
-            <li className="text-md text-shop-gray-900"><a href="#">Useful Links</a></li>
-            <li className="text-md text-shop-gray-900"><a href="#">Useful Links</a></li>
-            <li className="text-md text-shop-gray-900"><a href="#">Useful Links</a></li>
-            <li className="text-md text-shop-gray-900"><a href="#">Useful Links</a></li>
+            <li className="text-md text-shop-gray-900">Masoud Nemati</li>
+            <li className="text-md text-shop-gray-900">Software & Theology Student</li>
+            <li className="text-md text-shop-gray-900">Based in Türkiye</li>
+            <li className="text-md text-shop-gray-900">Faith • Learning • Purpose</li>
           </ul>
         </div>
 
         {/* App & Payment */}
         <div className="w-[312px] p-3">
-          <h4 className="mb-[30px] text-2xl font-bold text-shop-gray-1000">
-            App & Payment
+          <h4 className="mb-[20px] text-2xl font-bold text-shop-gray-1000">
+            Stay in Touch
           </h4>
 
-          <div className="flex flex-col gap-4">
-            <p className="text-md text-shop-gray-900">
-              Download our Apps and get extra 15% Discount on your first Order…!
-            </p>
+          <p className="mb-4 text-md text-shop-gray-900">
+            Leave your email and I’ll get back to you.
+          </p>
 
-            <div className="flex">
-              <Link className="mr-5" href="#">
-                <Image src="/images/other-images/appstore.png" alt="Ecom" width="128" height="39" />
-              </Link>
+          <form className="flex gap-2">
+            <input
+              type="email"
+              placeholder="Your email address"
+              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
+              required
+            />
 
-              <Link href="#">
-                <Image src="/images/other-images/google-play.png" alt="Ecom" width="128" height="39" />
-              </Link>
-            </div>
-          </div>
+            <button
+              type="submit"
+              className="rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 transition"
+            >
+              Send
+            </button>
+          </form>
         </div>
+
 
       </div>
     </footer>

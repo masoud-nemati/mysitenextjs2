@@ -1,11 +1,11 @@
-// HeaderFooter.tsx
+
 import Link from 'next/link'
 import React from 'react'
 
 const HeaderFooter = () => {
     return (
         <div className="mt-6 py-4 text-center text-sm text-gray-400 border-t border-gray-700">
-            © 2022 Ecom - Marketplace Template
+           © 2022 masoudnemati.com
             <br />
             Designed by{' '}
             <Link
