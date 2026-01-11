@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-
-
-
+import { navItems } from '@/data/navItem.data'
 import {
   IconFacebookGray,
   IconInstagramGray,
@@ -10,8 +8,40 @@ import {
   IconWhatsapp,
   IconTelegram,
   IconGithub,
+  IconEmail,
 } from "@/app/_components/ui/icons/icons";
 import ScrollToTop from "@/app/_components/ui/scroll-to-top/scroll-to-top";
+
+const socialLinks = [
+  {
+    href: "https://facebook.com/Masuod Nemati",
+    icon: IconFacebookGray,
+    label: "Facebook",
+  },
+  {
+    href: "https://instagram.com/masuodnemati1981",
+    icon: IconInstagramGray,
+    label: "Instagram",
+  },
+
+  {
+    href: "https://linkedin.com/in/Masuod Nemati",
+    icon: IconLinkedinGray,
+    label: "LinkedIn",
+  },
+  {
+    href: "https://t.me/https://t.me/Mas_nema",
+    icon: IconTelegram,
+    label: "Telegram",
+  },
+  {
+    href: "https://github.com/masoud-nemati",
+    icon: IconGithub,
+    label: "GitHub",
+  },
+];
+
+
 
 export const Footer: React.FC = () => {
   return (
@@ -40,25 +70,49 @@ export const Footer: React.FC = () => {
 
             <li>
               <div className="text-md text-shop-gray-900">
-                <strong className="font-bold">    <IconWhatsapp
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="#25D366
-"
-                  stroke="#25D366
-"
-                />  Whatsapp:</strong>
+                <strong className="font-bold flex items-center gap-2">
+                  <a
+                    href="https://wa.me/905313845662"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 hover:opacity-80 transition"
+                    aria-label="Chat on WhatsApp"
+                  >
+                    <IconWhatsapp
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="#25D366"
+                      stroke="#25D366"
+                    />
+                    Whatsapp:
+                  </a>
+                </strong>
 
-                (+90) 531-384-5662
-
-
+                <a
+                  href="https://wa.me/905313845662"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-2 hover:underline"
+                >
+                  (+90) 531-384-5662
+                </a>
               </div>
+
             </li>
 
             <li>
               <div className="text-md text-shop-gray-900">
                 <strong className="font-bold">E-mail:</strong>
+                <IconEmail
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="#25D366
+"
+                  stroke="#25D
+"
+                />
                 masuodn8@gmail.com
               </div>
             </li>
@@ -72,13 +126,27 @@ export const Footer: React.FC = () => {
 
             <li>
               <div className="flex gap-5 text-md">
-                <IconFacebookGray width="32" height="32" viewBox="0 0 32 32" fill="#425a8b" stroke="#fff" />
-                <IconInstagramGray width="32" height="32" viewBox="0 0 32 32" fill="#425a8b" stroke="#fff" />
-                <IconTelegram width="32" height="32" viewBox="0 0 32 32" fill="#425a8b" stroke="#fff" />
-                <IconLinkedinGray width="32" height="32" viewBox="0 0 32 32" fill="#425a8b" stroke="#fff" />
-                <IconGithub width="32" height="32" viewBox="0 0 32 32" fill="#425a8b" stroke="#fff" />
+                {socialLinks.map(({ href, icon: Icon, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="hover:scale-110 transition"
+                  >
+                    <Icon
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="#425a8b"
+                      stroke="#fff"
+                    />
+                  </a>
+                ))}
               </div>
             </li>
+
           </ul>
         </div>
 
@@ -89,12 +157,15 @@ export const Footer: React.FC = () => {
           </h4>
 
           <ul className="space-y-5">
-
-            <li><Link href="/" className="text-md text-shop-gray-900">Home</Link></li>
-            <li><Link href="/about" className="text-md text-shop-gray-900">About Me</Link></li>
-            <li><Link href="/projects" className="text-md text-shop-gray-900">Projects</Link></li>
-            <li><Link href="/blog" className="text-md text-shop-gray-900">Blog</Link></li>
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="text-md text-shop-gray-900">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
           </ul>
+
         </div>
 
         {/* Footer Menu 2 */}
