@@ -6,7 +6,7 @@ import svgMin from "gulp-svgmin";
 import wrap from "gulp-wrap";
 import { writeFile } from "fs";
 const source_folder = "./public/svg_icons";
-const destination_folder = "./src/app/_components/icons/";
+const destination_folder = "./src/app/_components/ui/icons/";
 
 //--------------------------------------------------------------------------------------------------------
 const component_template = 

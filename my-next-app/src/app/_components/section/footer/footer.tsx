@@ -7,7 +7,9 @@ import {
   IconFacebookGray,
   IconInstagramGray,
   IconLinkedinGray,
- 
+  IconWhatsapp,
+  IconTelegram,
+  IconGithub,
 } from "@/app/_components/ui/icons/icons";
 import ScrollToTop from "@/app/_components/ui/scroll-to-top/scroll-to-top";
 
@@ -38,8 +40,19 @@ export const Footer: React.FC = () => {
 
             <li>
               <div className="text-md text-shop-gray-900">
-                <strong className="font-bold">Phone:</strong>
+                <strong className="font-bold">    <IconWhatsapp
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="#25D366
+"
+                  stroke="#25D366
+"
+                />  Whatsapp:</strong>
+
                 (+90) 531-384-5662
+
+
               </div>
             </li>
 
@@ -61,8 +74,9 @@ export const Footer: React.FC = () => {
               <div className="flex gap-5 text-md">
                 <IconFacebookGray width="32" height="32" viewBox="0 0 32 32" fill="#425a8b" stroke="#fff" />
                 <IconInstagramGray width="32" height="32" viewBox="0 0 32 32" fill="#425a8b" stroke="#fff" />
-               
+                <IconTelegram width="32" height="32" viewBox="0 0 32 32" fill="#425a8b" stroke="#fff" />
                 <IconLinkedinGray width="32" height="32" viewBox="0 0 32 32" fill="#425a8b" stroke="#fff" />
+                <IconGithub width="32" height="32" viewBox="0 0 32 32" fill="#425a8b" stroke="#fff" />
               </div>
             </li>
           </ul>
@@ -80,7 +94,6 @@ export const Footer: React.FC = () => {
             <li><Link href="/about" className="text-md text-shop-gray-900">About Me</Link></li>
             <li><Link href="/projects" className="text-md text-shop-gray-900">Projects</Link></li>
             <li><Link href="/blog" className="text-md text-shop-gray-900">Blog</Link></li>
-            <li><Link href="/contact" className="text-md text-shop-gray-900">Contact</Link></li>
           </ul>
         </div>
 

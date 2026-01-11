@@ -1,3 +1,7 @@
+
+"use client";
+
+
 import ImageComponent from "@/app/_components/section/image/ImageComponent";
 import CommentSection from "../../section/CommentSection";
 import "@/tailwind/component/aboutcopm.css";
