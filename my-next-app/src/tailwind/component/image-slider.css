@@ -1,0 +1,136 @@
+/* ===== Image Slider ===== */
+
+.image-slider {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1),
+              0 10px 10px -5px rgba(0,0,0,0.04);
+  aspect-ratio: 1 / 1;
+}
+
+/* 🔑 مهم: کنترل مستقیم img داخل next/image */
+.image-slider img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+/* sm ≥ 640px */
+@media (min-width: 640px) {
+  .image-slider {
+    aspect-ratio: 16 / 9;
+    max-width: 95%;
+  }
+}
+
+/* md ≥ 768px */
+@media (min-width: 768px) {
+  .image-slider {
+    max-width: 92%;
+  }
+}
+
+/* lg ≥ 1024px */
+@media (min-width: 1024px) {
+  .image-slider {
+    max-width: 88%;
+    aspect-ratio: 21 / 9;
+  }
+}
+
+/* xl ≥ 1280px */
+@media (min-width: 1280px) {
+  .image-slider {
+    max-width: 84%;
+  }
+}
+
+/* 2xl ≥ 1536px */
+@media (min-width: 1536px) {
+  .image-slider {
+    max-width: 1336px;
+    aspect-ratio: 21 / 9;
+  }
+}
+
+/* ===== Image (اختیاری اگر کلاس دادی) ===== */
+
+.image-slider-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+}
+
+/* ===== Buttons ===== */
+
+.image-slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.image-slider-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.image-slider-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* md buttons bigger */
+@media (min-width: 768px) {
+  .image-slider-btn {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+/* ===== Left Button ===== */
+
+.image-slider-btn-left {
+  left: 0.75rem;
+  background: linear-gradient(
+    to bottom right,
+    rgba(34, 211, 238, 0.8),
+    rgba(37, 99, 235, 0.8)
+  );
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.4);
+}
+
+@media (min-width: 768px) {
+  .image-slider-btn-left {
+    left: 1rem;
+  }
+}
+
+/* ===== Right Button ===== */
+
+.image-slider-btn-right {
+  right: 0.75rem;
+  background: linear-gradient(
+    to bottom right,
+    rgba(168, 85, 247, 0.8),
+    rgba(219, 39, 119, 0.8)
+  );
+  box-shadow: 0 10px 20px rgba(219, 39, 119, 0.4);
+}
+
+@media (min-width: 768px) {
+  .image-slider-btn-right {
+    right: 1rem;
+  }
+}

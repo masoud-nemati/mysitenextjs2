@@ -102,7 +102,7 @@ export const Footer: React.FC = () => {
             </li>
 
             <li>
-              <div className="text-md text-shop-gray-900">
+              <div className="text-md text-shop-gray-900  hover:underline cursor-pointer">
                 <strong className="font-bold">E-mail:</strong>
                 <IconEmail
                   width="32"
@@ -156,10 +156,10 @@ export const Footer: React.FC = () => {
             Pages
           </h4>
 
-          <ul className="space-y-5">
+          <ul className="space-y-5 hover:" >
             {navItems.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="text-md text-shop-gray-900">
+                <Link href={item.href} className="text-md text-shop-gray-900 hover:underline cursor-pointer ">
                   {item.label}
                 </Link>
               </li>

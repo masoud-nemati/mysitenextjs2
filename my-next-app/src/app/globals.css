@@ -74,3 +74,47 @@ html {
   --foreground: 210 40% 98%;
 }
 
+
+
+.blog-content {
+  color: var(--fg);
+  line-height: 1.9;
+}
+
+/* متن‌ها */
+.blog-content p,
+.blog-content li,
+.blog-content span {
+  color: var(--fg);
+}
+
+/* تیترها */
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4 {
+  color: var(--fg);
+  font-weight: 700;
+}
+
+/* متن کم‌رنگ */
+.blog-content small {
+  color: var(--muted);
+}
+
+/* لینک‌ها */
+.blog-content a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.dark .blog-content a {
+  color: #60a5fa;
+}
+
+/* بلاک کوت */
+.blog-content blockquote {
+  border-right: 4px solid var(--muted);
+  padding-right: 1rem;
+  color: var(--muted);
+}

@@ -30,7 +30,7 @@ export const BlogCard: React.FC<IBlogCardProps> = ({
     alt="blogImage"
 />
                 </div>
-                <Tag tag_title={label} />
+                {/* <Tag tag_title={label} /> */}
 
                 {/* title */}
                 <h4 className="text-wrap px-1 text-2xl text-shop-gray-900 hover:text-blue-600">
