@@ -3,16 +3,22 @@
 
 
 
-
-
 @layer utilities {
-    .container-fluid {
-        @apply px-2 md:px-4;
-    }
-    .containerD {
-        @apply mx-auto w-full min-w-[326px] [@media(min-width:1400px)]:min-w-[1336px] [@media(min-width:1400px)]:max-w-[1336px];
-    }
+  .container-fluid {
+    @apply px-2 md:px-4;
+  }
+
+  .containerD {
+  @apply
+    mx-auto
+    w-full
+    px-4
+    2xl:max-w-[1336px];
 }
+
+}
+
+
 
 :root {
   --bg: #ffffff;

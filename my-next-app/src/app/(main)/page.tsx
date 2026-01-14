@@ -48,15 +48,16 @@ export default function Home() {
           </h1>
         </Reveal>
 
-        <Reveal delay={0.1}>
-          <section className="containerD w-full">
+        <section className="containerD">
+          <Reveal delay={0.1}>
             <ImageSlider
               images={homeSliderImages}
               height={500}
               maxWidth="max-w-6xl"
             />
-          </section>
-        </Reveal>
+          </Reveal>
+        </section>
+
 
         <Reveal delay={0.2}>
           <section className="containerD w-full">
@@ -66,7 +67,9 @@ export default function Home() {
 
         <Reveal delay={0.3}>
           <section className="containerD w-full">
-            <SmallBanner data={smallBannerData} />
+            <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen">
+              <SmallBanner data={smallBannerData} />
+            </div>
           </section>
         </Reveal>
 
