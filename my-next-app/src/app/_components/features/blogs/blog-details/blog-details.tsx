@@ -19,14 +19,15 @@ const BlogDetailsComponent: FC<IBlogDetailsProps> = (props) => {
           {/* blog title */}
           <h1
             className="
-              mb-4 pr-5 md:mb-6 mt-3 md:mt-4
-              text-2xl md:text-3xl lg:text-4xl
-              font-bold leading-tight text-right
-              text-slate-800 dark:text-slate-100
-            "
+    mb-4 pr-5 md:mb-6 mt-3 md:mt-4
+    text-2xl md:text-3xl lg:text-4xl
+    font-bold leading-tight text-right
+    text-[color:var(--fg)]
+  "
           >
             {title}
           </h1>
+
 
           {/* author (top - desktop only) */}
           {author && (

@@ -44,7 +44,7 @@ export default function Home() {
               mb-3
             "
           >
-            Welcome to my site Masoud
+            Welcome 
           </h1>
         </Reveal>
 

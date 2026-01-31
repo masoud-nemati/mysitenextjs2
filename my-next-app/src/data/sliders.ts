@@ -1,6 +1,6 @@
 export const homeSliderImages = [
   "/images/imagslider/baner.webp",
-  "/images/imagslider/Picsart10.jpg",
+ 
   "/images/imagslider/image.jpg",
 ];
 

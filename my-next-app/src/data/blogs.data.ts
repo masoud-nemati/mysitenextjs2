@@ -99,7 +99,7 @@ export const BlogsData: IBlogDetailsProps[] = [
   {
     id: "2",
     title: "تثلیث",
-    srcImage: "/images/img2/imgtaslis.webp",
+    srcImage: "/images/img2/imgtaslis.jpeg",
     label: "تثلیث",
     date: "2024-10-18",
     visit_number: 2970,
@@ -400,7 +400,7 @@ export const BlogsData: IBlogDetailsProps[] = [
   {
     id: "4",
     title: "حریم‌ها، حیطه‌ها و مرزها: تعریف و تفاوت‌ها",
-    srcImage: "/images/img2/imgharimha.webp",
+    srcImage: "/images/blog-img/blog-img-big.png",
     label: "حیطه ها",
     date: "2024-09-23",
     visit_number: 2784,

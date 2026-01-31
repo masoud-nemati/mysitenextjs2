@@ -19,6 +19,14 @@
 }
 
 
+html,
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+
+
 
 :root {
   --bg: #ffffff;
