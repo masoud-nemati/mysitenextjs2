@@ -12,10 +12,13 @@ export default function LoginForm() {
   const [email, setEmail] = useState("");
   const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    router.push("/");
-  };
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+  document.cookie = "isLoggedIn=true; path=/";
+  router.push("/");
+};
+
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black p-4">
@@ -70,9 +73,13 @@ export default function LoginForm() {
                 onChange={(e) => setEmail(e.target.value)}
               />
 
-              <Button variant="primary" compSize="md">vizit site</Button>
-
-
+              <Button
+                variant="primary"
+                compSize="md"
+                type="submit"   
+              >
+                vizit site
+              </Button>
             </form>
 
 

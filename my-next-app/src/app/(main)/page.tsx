@@ -1,3 +1,7 @@
+
+
+import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 import { AttributeSection } from "../_components/features/attribute-section";
 import { SmallBanner } from "../_components/section/small-baner/small-baner"
 import { smallBannerData } from "@/data/small-baner-data";
@@ -22,11 +26,9 @@ import LatestSkills from "../_components/features/skills/latestskills/LatestSkil
 
 
 
-
-
-
-
 export default function Home() {
+
+
   return (
     <main className="min-h-screen bg-background text-foreground">
       <section className="container-fluid mx-auto flex flex-col items-center space-y-[50px] py-16">
