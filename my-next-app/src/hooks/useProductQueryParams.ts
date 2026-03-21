@@ -1,6 +1,9 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+
 import { PRODUCTS_PER_PAGE } from "@/configs/itemsPerPage";
-import { Product } from "@/data/products.types";
+import { Product } from "@/data/products.data";
 import { low, parseCSV, toNum, toNumOrUndef } from "@/utils/helper";
 import { useSearchParams } from "next/navigation";
 

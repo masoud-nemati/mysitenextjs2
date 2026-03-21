@@ -1,7 +1,7 @@
-import React from "react";
 import { SmallTagProps } from "./small-tag.types";
 
-const SmallTag: React.FC<SmallTagProps> = ({ tag_type, children }) => {
+
+const SmallTag: React.FC<SmallTagProps> = ({ tag_type, children, className }) => {
     
     const tagClasses: Record<string, string> = {
         success: "bg-green-700",
@@ -15,43 +15,16 @@ const SmallTag: React.FC<SmallTagProps> = ({ tag_type, children }) => {
         warning: "",
     };
 
+    const bgClass = tag_type ? tagClasses[tag_type] : "bg-gray-500";
+    const text = tag_type ? defaultText[tag_type] : "";
+
     return (
-        <span className={`label w-fit rounded-2xl px-3 py-1 text-sm text-white ${tagClasses[tag_type] || "bg-gray-500"}`}>
-            {children || defaultText[tag_type]}
+        <span
+            className={`label w-fit rounded-2xl px-3 py-1 text-sm text-white 
+            ${bgClass} ${className || ""}`}
+        >
+            {children || text}
         </span>
     );
 };
-
-export default SmallTag;
-
-
-
-
-
-
-
-
-
-// import React from 'react'
-// import { SmallTagProps } from './small-tag.type'
-
-// const SmallTag: React.FC<SmallTagProps> = ({ tag_type, children }) => {
-//     return (
-//         <span
-//             className={`label w-fit rounded-2xl px-3 py-1 text-sm text-white 
-//             ${tag_type === 'success' ? 'bg-green-700' : ''} 
-//             ${tag_type === 'danger' ? 'bg-red-600' : ''} 
-//             ${tag_type === 'warning' ? 'bg-warning' : ''}`}
-//         >
-//             {tag_type === 'success' && (
-//                 <span className="">{children || 'New'}</span>
-//             )}
-//             {tag_type === 'danger' && (
-//                 <span className="">{children || 'Hot'}</span>
-//             )}
-//             {tag_type === 'warning' && <span className="">{children}</span>}
-//         </span>
-//     )
-// }
-
-// export default SmallTag
+export default SmallTag

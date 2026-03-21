@@ -26,24 +26,20 @@ const sampleProduct: IProductCard = {
   slug: 'product-1',
 }
 
-// ⚙️ حالت پایه (با تخفیف و tag_type)
 export const Default: Story = {
   render: () => <ProductCard {...sampleProduct} />,
 }
 
-// 🆕 حالت بدون تخفیف و بدون tag_type → باید برچسب "new" نشان دهد
 export const NewProduct: Story = {
   render: () => (
     <ProductCard
       {...sampleProduct}
-      discount={undefined}
+      discount={0}
       tag_type={null}
       title="Product #2: New Arrival"
     />
   ),
 }
-
-// 💥 حالت تخفیف زیاد (برای تست درصد بالا)
 export const BigDiscount: Story = {
   render: () => (
     <ProductCard
@@ -55,7 +51,6 @@ export const BigDiscount: Story = {
   ),
 }
 
-// 🟢 حالت موفقیت (tag_type: success)
 export const SuccessTag: Story = {
   render: () => (
     <ProductCard

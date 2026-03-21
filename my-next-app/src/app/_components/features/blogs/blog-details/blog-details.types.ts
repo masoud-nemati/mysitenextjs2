@@ -6,8 +6,12 @@ import { IBlogCardProps } from "../blog-card/blog-card.types"
 //     readingTime?:number
 //     author?:AuthorProps
 // }
-export interface IBlogDetailsProps extends IBlogCardProps {
-  content: string;
-  readingTime?: number;
-  author?: AuthorProps;
+export interface IBlogCardProps {
+  id?: string;
+  title: string;
+  slug: string;
+  srcImage?: string;
+  label?: string;
+  date?: string;
+  visit_number?: number;
 }

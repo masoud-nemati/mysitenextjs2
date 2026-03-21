@@ -4,15 +4,15 @@ import { ProductListData } from "@/data/products.data";
 import { useProductQueryParams } from "@/hooks/useProductQueryParams";
 import { Grid3X3, List } from "lucide-react";
 import { useState } from "react";
-import FilterSelect from "../../ui/filter-select";
+import FilterSelect from "../../features/filter-select";
 import FilterModal from "./filter-modal/filter-modal";
 import { ToolbarProps } from "./filter-toolbar.types";
 import ResultInfo from "./ui/result-info";
 
 export default function FilterToolbar({ view, setView }: ToolbarProps) {
   const [open, setOpen] = useState(false);
-  
-  const {total, startIndex, endIndex } = useProductQueryParams(ProductListData);
+
+  const { total, startIndex, endIndex } = useProductQueryParams(ProductListData);
 
   return (
     <>
@@ -52,9 +52,9 @@ export default function FilterToolbar({ view, setView }: ToolbarProps) {
               <FilterSelect
                 label="Show"
                 paramName="perPage"
-                options={[5, 10, 20, 50,100,300]}
+                options={["5", "10", "20", "50", "100", "300"]}
                 suffix="items"
-                defaultValue={5}
+                defaultValue="5"
                 preferUrl={false}
                 syncOnMount={true}
               />
@@ -66,26 +66,26 @@ export default function FilterToolbar({ view, setView }: ToolbarProps) {
                   aria-pressed={view === "grid"}
                   onClick={() => setView("grid")}
                   className={`inline-flex h-9 w-9 items-center justify-center rounded-md border ${view === "grid"
-                      ? "border-primary text-primary"
-                      : "border-border text-muted-foreground hover:bg-muted/60"
+                    ? "border-primary text-primary"
+                    : "border-border text-muted-foreground hover:bg-muted/60"
                     }`}
                 >
                   <Grid3X3 className="h-4 w-4" />
                 </button>
-                
+
                 <button
                   type="button"
                   aria-label="List view"
                   aria-pressed={view === "list"}
                   onClick={() => setView("list")}
                   className={`inline-flex h-9 w-9 items-center justify-center rounded-md border ${view === "list"
-                      ? "border-primary text-primary"
-                      : "border-border text-muted-foreground hover:bg-muted/60"
+                    ? "border-primary text-primary"
+                    : "border-border text-muted-foreground hover:bg-muted/60"
                     }`}
                 >
                   <List className="h-4 w-4" />
                 </button>
-                
+
               </div>
             </div>
           </div>

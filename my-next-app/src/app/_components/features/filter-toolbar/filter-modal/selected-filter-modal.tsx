@@ -1,3 +1,8 @@
+"use client"; // لازم برای Client Component
+import { useSearchParams } from "next/navigation";
+
+
+
 export default function SelectedFilterModal({
   searchParams,
   toggleCSV,
