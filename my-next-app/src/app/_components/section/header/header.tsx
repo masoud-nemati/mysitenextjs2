@@ -76,7 +76,7 @@ export const Header: React.FC = () => {
                                 ))}
                             </div>
                             {/* Icons */}
-                            <HeaderIcons />
+                            {/* <HeaderIcons /> */}
                         </div>
                     </div>
                 </div>

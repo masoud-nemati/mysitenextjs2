@@ -1,37 +1,36 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Input } from "@/app/_components/ui/input/input";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "@/firebaseConfig";
 
 import "@/tailwind/component/CommentSection.css";
 
 export default function CommentSection() {
-  const [comments, setComments] = useState<unknown[]>([]);
   const [name, setName] = useState("");
   const [text, setText] = useState("");
   const [isLoggedIn] = useState(true);
+  const [sentMessage, setSentMessage] = useState(false); // پیام ارسال شد
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      const savedComments = localStorage.getItem("comments");
-      if (savedComments) {
-        setComments(JSON.parse(savedComments));
-      }
-    }
-  }, [isLoggedIn]);
-
-  useEffect(() => {
-    if (comments.length > 0 && isLoggedIn) {
-      localStorage.setItem("comments", JSON.stringify(comments));
-    }
-  }, [comments, isLoggedIn]);
-
-  const addComment = () => {
+  const addComment = async () => {
     if (name.trim() && text.trim()) {
-      const newComment = { id: Date.now(), name, text };
-      setComments([...comments, newComment]);
-      setName("");
-      setText("");
+      try {
+        await addDoc(collection(db, "comments"), {
+          name,
+          text,
+          timestamp: Date.now(),
+        });
+        // پاک کردن فرم
+        setName("");
+        setText("");
+
+        // نمایش پیام ارسال شد
+        setSentMessage(true);
+        setTimeout(() => setSentMessage(false), 3000); // بعد ۳ ثانیه پیام محو شود
+      } catch (err) {
+        console.error("Error adding comment:", err);
+      }
     }
   };
 
@@ -41,7 +40,6 @@ export default function CommentSection() {
 
       {isLoggedIn ? (
         <div>
-          {/* نام */}
           <Input
             type="text"
             label="Your name"
@@ -52,7 +50,6 @@ export default function CommentSection() {
             isFullWidth
           />
 
-          {/* متن نظر – چون Input فقط input است */}
           <textarea
             placeholder="Write your comment..."
             value={text}
@@ -61,8 +58,15 @@ export default function CommentSection() {
           />
 
           <button onClick={addComment} className="submit-button">
-            send
+            Send
           </button>
+
+          {/* پیام ارسال شد */}
+          {sentMessage && (
+            <div className="sent-message">
+              ✔ Comment Sent!
+            </div>
+          )}
         </div>
       ) : (
         <p>You must be logged in to submit a comment.</p>
