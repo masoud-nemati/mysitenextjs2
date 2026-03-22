@@ -1,27 +1,14 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === "production";
-
-const repoName = "mysitenextjs2"; // 👈 اسم ریپوی تو
-
 const nextConfig: NextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: true },
+  output: "export",
+  images: { unoptimized: true },
 
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-
-  output: isProd ? "export" : undefined,
-
-  images: {
-    unoptimized: true,
-  },
-
-  // ✅ مهم‌ترین بخش
-  basePath: isProd ? `/${repoName}` : "",
-  assetPrefix: isProd ? `/${repoName}/` : "",
+  // ✅ برای دامنه شخصی
+  basePath: "",
+  assetPrefix: "",
 };
 
 export default nextConfig;

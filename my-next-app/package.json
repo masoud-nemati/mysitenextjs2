@@ -9,7 +9,8 @@
     "lint": "eslint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "export": "next build --turbopack && next export"
+    "export": "next build --turbopack && next export",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@next/mdx": "^16.0.10",
