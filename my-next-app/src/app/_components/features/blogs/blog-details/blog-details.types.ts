@@ -1,11 +1,5 @@
-import { AuthorProps } from "../author/author.types"
-import { IBlogCardProps } from "../blog-card/blog-card.types"
+import { AuthorProps } from "../author/author.types";
 
-// export interface IBlogDetailsProps extends IBlogCardProps {
-//     content:string
-//     readingTime?:number
-//     author?:AuthorProps
-// }
 export interface IBlogCardProps {
   id?: string;
   title: string;
@@ -14,4 +8,11 @@ export interface IBlogCardProps {
   label?: string;
   date?: string;
   visit_number?: number;
+}
+
+// ✅ تایپ مخصوص صفحه جزئیات
+export interface IBlogDetailsProps extends IBlogCardProps {
+  content: string;
+  readingTime?: number;
+  author?: AuthorProps;
 }

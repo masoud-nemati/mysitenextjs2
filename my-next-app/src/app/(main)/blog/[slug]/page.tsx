@@ -26,10 +26,10 @@ export async function generateStaticParams() {
 // ✅ صفحه
 export default async function BlogDetailsPage({ params }: { params: { slug: string } }) {
 
-  const { slug } = params;
+  const { slug } = await params;
 
   const blog = await fetchBlogBySlug(slug);
-  
+
 
   if (!blog) return notFound();
 
@@ -44,7 +44,8 @@ export default async function BlogDetailsPage({ params }: { params: { slug: stri
       <BreadCrumbs items={breadcrumbItems} />
       <BlogDetailsComponent
         {...blog}
-        content={blog.content}
+        content={blog.content || ""}
+        author={blog.author as import('@/app/_components/features/blogs/author/author.types').AuthorProps}
       />
     </>
   );

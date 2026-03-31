@@ -14,7 +14,7 @@ const BlogDetailsComponent: FC<IBlogDetailsProps> = (props) => {
       {/* blog title & details */}
       <section className="containerD my-6 md:my-10">
         <div>
-          <Tag tag_title={label} />
+          <Tag tag_title={label ??""} />
 
           {/* blog title */}
           <h1
@@ -47,16 +47,18 @@ const BlogDetailsComponent: FC<IBlogDetailsProps> = (props) => {
 
       {/* blog image */}
       <section className="containerD my-6 md:my-8">
-        <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-xl overflow-hidden shadow-lg">
-          <Image
-            src={srcImage}
-            alt={title}
-            fill
-            className="object-cover"
-            priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
-          />
-        </div>
+        {srcImage && (
+          <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-xl overflow-hidden shadow-lg">
+            <Image
+              src={srcImage} 
+              alt={title}
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
+            />
+          </div>
+        )}
       </section>
 
       {/* blog content */}
